@@ -1,7 +1,12 @@
+import { Banner, StoreServices } from "../components/hero";
+import { Footer } from "../components/shared";
+
 const LandingPage: React.FC = () => {
     return (
         <>
-            fkfkfkf
+           <Banner />
+           <StoreServices />
+           <Footer />
         </>
     )
 }

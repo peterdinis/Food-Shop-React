@@ -1,7 +1,7 @@
 const Banner: React.FC = () => {
     return (
         <>
-        
+        gggggggggg
         </>
     )
 }
