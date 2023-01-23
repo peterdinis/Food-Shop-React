@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
               <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                 <li>
                   <a
-                    className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
                     href="#"
                   >
                     Products
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
                     href="#"
                   >
                     About
