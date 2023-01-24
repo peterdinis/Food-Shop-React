@@ -75,10 +75,6 @@ const Navbar: React.FC = () => {
             className="order-2 md:order-3 flex items-center"
             id="nav-content"
           >
-            <a className="inline-block no-underline hover:text-black" href="#">
-              <Person4Icon />
-            </a>
-
             <a
               className="pl-3 inline-block no-underline hover:text-black"
               href="#"

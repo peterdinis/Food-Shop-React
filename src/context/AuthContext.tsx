@@ -8,7 +8,6 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
-  User,
   confirmPasswordReset,
 } from "firebase/auth";
 
