@@ -1,8 +1,8 @@
+import { RegisterForm } from "../../components/auth";
+
 const RegisterPage: React.FC = () => {
     return (
-        <>
-        
-        </>
+       <RegisterForm />
     )
 }
 
