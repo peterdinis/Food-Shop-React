@@ -1,7 +1,7 @@
 const CardWrapper: React.FC = () =>{
     return (
         <>
-        I am card
+        <h3 className="text-center mt-10 text-4xl">Card</h3>
         </>
     )
 }
