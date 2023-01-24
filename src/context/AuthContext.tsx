@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  User,
   confirmPasswordReset,
 } from "firebase/auth";
 
@@ -21,12 +22,15 @@ const AuthContext = createContext({
   resetPassword: () => Promise,
 });
 
+interface IContextProps {
+  children?: React.ReactNode;
+}
 
-export const useAuth = () => useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext);
 
 
-export default function AuthContextProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState(null)
+export default function AuthContextProvider({ children }: IContextProps) {
+    const [currentUser, setCurrentUser] = useState<any>(null)
   
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, user => {
