@@ -1,9 +1,7 @@
-const ProductsPage: React.FC = () => {
-    return (
-        <>
-        
-        </>
-    )
-}
+import { DisplayAllProducts } from "../../components/products";
 
-export default ProductsPage
+const ProductsPage: React.FC = () => {
+  return <DisplayAllProducts />;
+};
+
+export default ProductsPage;
