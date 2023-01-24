@@ -37,14 +37,26 @@ const Navbar: React.FC = () => {
                     Products
                   </a>
                 </li>
+
                 <li>
                   <a
                     className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
                     href="#"
                   >
-                    About
+                    Card
                   </a>
                 </li>
+
+                <li>
+                  <a
+                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                    href="#"
+                  >
+                    Login
+                  </a>
+                </li>
+
+                
               </ul>
             </nav>
           </div>
