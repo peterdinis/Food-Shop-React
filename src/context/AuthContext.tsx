@@ -14,8 +14,8 @@ import {
 const AuthContext = createContext({
   currentUser: null,
   signInWithGoogle: () => Promise,
-  login: () => Promise,
-  register: () => Promise,
+  login: (email: string, password: string) =>Promise,
+  registerUser: (email: string, password: string) => Promise,
   logout: () => Promise,
   forgotPassword: () => Promise,
   resetPassword: () => Promise,
@@ -48,7 +48,7 @@ export default function AuthContextProvider({ children }: IContextProps) {
       return signInWithEmailAndPassword(auth, email, password)
     }
   
-    function register(email: string, password: string) {
+    function registerUser(email: string, password: string) {
       return createUserWithEmailAndPassword(auth, email, password)
     }
   
@@ -75,7 +75,7 @@ export default function AuthContextProvider({ children }: IContextProps) {
       currentUser,
       signInWithGoogle,
       login,
-      register,
+      registerUser,
       logout,
       forgotPassword,
       resetPassword,
