@@ -43,6 +43,7 @@ const LoginForm: React.FC = () => {
               <input
                 className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
                 id="email"
+                placeholder="email@email.com"
                 type="email"
                 required={true}
                 {...register("email", {
@@ -99,6 +100,7 @@ const LoginForm: React.FC = () => {
                 id="password"
                 type="password"
                 autoComplete="off"
+                placeholder="*****************************"
                 required={true}
                 {...register("password", {
                   required: "You must specify a password",
@@ -128,7 +130,7 @@ const LoginForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className="reg registerButton" type="submit">
+            <button className="mt-4 bg-blue-100 p-2 rounded-lg font-bold" type="submit">
               Login
             </button>
             <div>
