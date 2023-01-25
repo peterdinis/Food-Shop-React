@@ -30,7 +30,7 @@ const ProductInfo: React.FC = () => {
               </p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
               <button className="mt-10 text-xl" onClick={navigateBack}>
-                Späť na knihy
+                Späť na menu
               </button>
             </div>
           </div>
