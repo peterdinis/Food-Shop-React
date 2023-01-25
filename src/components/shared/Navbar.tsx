@@ -40,23 +40,20 @@ const Navbar: React.FC = () => {
 
                 <li>
                   <a
-                    className="no-underline font-bold inline-block hover:text-black hover:underline py-2 px-4"
-                    href="/card"
-                  >
-                    Card
-                  </a>
-                </li>
-
-                <li>
-                  <a
                     className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
                     href="/login"
                   >
                     Login
                   </a>
                 </li>
-
-                
+                <li>
+                  <a
+                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                    href="/register"
+                  >
+                    Register
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -64,7 +61,7 @@ const Navbar: React.FC = () => {
           <div className="order-1 md:order-2">
             <a
               className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-              href="#"
+              href="/"
             >
               <RestaurantMenuIcon />
               FoodReShop
@@ -77,7 +74,7 @@ const Navbar: React.FC = () => {
           >
             <a
               className="pl-3 inline-block no-underline hover:text-black"
-              href="#"
+              href="/card"
             >
               <ShoppingBasketIcon />
             </a>
