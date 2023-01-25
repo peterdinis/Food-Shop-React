@@ -67,32 +67,6 @@ const LoginForm: React.FC = () => {
                 className="block text-grey-darker text-sm font-bold mb-2"
                 htmlFor="username"
               >
-                Email
-              </label>
-              <input
-                className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-                id="email"
-                autoFocus
-                type="email"
-                placeholder="Email"
-                {...register("email", {
-                  required: true,
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "invalid email address",
-                  },
-                })}
-              />
-
-              <p className="text-red-800">
-                {errors.email && errors.email.message}
-              </p>
-            </div>
-            <div className="mb-2">
-              <label
-                className="block text-grey-darker text-sm font-bold mb-2"
-                htmlFor="username"
-              >
                 Password
               </label>
               <input
