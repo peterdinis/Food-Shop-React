@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
   const onHandleSubmit = (data: FormData) => {
     try {
       login(data.email, data.password);
-      navigate("/login");
+      navigate("/profile");
     } catch (err) {
       console.error(err);
     }
