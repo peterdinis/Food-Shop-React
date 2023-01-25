@@ -16,7 +16,6 @@ const RegisterForm: React.FC = () => {
     formState: { errors },
     trigger,
     register,
-    watch,
   } = useForm<FormData>();
 
   const onHandleSubmit = (data: FormData) => {
