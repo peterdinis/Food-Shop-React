@@ -3,7 +3,7 @@ import Navbar from "./components/shared/Navbar";
 import { LandingPage, NotFoundPage } from "./pages";
 import { ProductsPage } from "./pages/products";
 import { CardPage } from "./pages/card";
-import { RegisterPage, LoginPage, ProfilePage } from "./pages/auth";
+import { RegisterPage, LoginPage, ProfilePage, ForgotPasswordPage, ResetPasswordPage } from "./pages/auth";
 
 function App() {
   return (
@@ -16,6 +16,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/forgot/password" element={<ForgotPasswordPage />} />
+        <Route path="/reset/password" element={<ResetPasswordPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
