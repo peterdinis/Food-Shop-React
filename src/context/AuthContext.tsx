@@ -17,8 +17,8 @@ const AuthContext = createContext({
   login: (email: string, password: string) =>Promise,
   registerUser: (email: string, password: string) => Promise,
   logout: () => Promise,
-  forgotPassword: () => Promise,
-  resetPassword: () => Promise,
+  forgotPassword: (...args: any) => Promise,
+  resetPassword: (...args: any) => Promise,
 });
 
 interface IContextProps {
