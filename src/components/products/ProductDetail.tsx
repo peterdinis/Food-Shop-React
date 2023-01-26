@@ -31,7 +31,7 @@ const ProductDetail: React.FC = () => {
               <button className="mt-4 pl-2 bg-blue-100 p-2 rounded-lg font-bold">Add to Card</button>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
               <button className="mt-10 text-xl" onClick={navigateBack}>
-                Späť na menu
+                Go to menu
               </button>
             </div>
           </div>
