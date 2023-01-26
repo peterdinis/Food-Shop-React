@@ -22,11 +22,11 @@ const ProductDetail: React.FC = () => {
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <div>
                 <h1 className="text-gray-900 text-4xl title-font font-medium mb-1">
-                  <span className="font-bold">Názov</span>: FOO
+                  <span className="font-bold">Name</span>: FOO
                 </h1>
               </div>
               <p className="text-2xl mt-3 font-light leading-relaxed  mb-4 text-gray-800">
-                <span className="font-bold">Krátke info</span>: iiiii
+                <span className="font-bold">Price</span>: 2€
               </p>
               <button className="mt-4 pl-2 bg-blue-100 p-2 rounded-lg font-bold">Add to Card</button>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
