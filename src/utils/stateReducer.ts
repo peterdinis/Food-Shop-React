@@ -1,4 +1,4 @@
-import { ADD_TO_BASKET } from "../typings/constants";
+import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "../typings/constants";
 import { BasicAction, InitialStateI } from "../typings/reduxTypings";
 
 
@@ -8,6 +8,11 @@ const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI 
         return {
             ...state,
             basket: [...state.basket, action.item]
+        }
+
+      case REMOVE_FROM_BASKET:
+        return {
+          ...state
         }
 
       default:

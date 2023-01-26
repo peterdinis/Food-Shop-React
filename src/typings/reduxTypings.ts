@@ -7,8 +7,13 @@ export const initialState = {
 } as InitialStateI;
 
 type AddToBasketAction = {
-    item: [],
+    item: any,
     type: string,
 }
 
-export type BasicAction = AddToBasketAction 
+type RemoveFromBasketAction = {
+    item: any,
+    type: string,
+}
+
+export type BasicAction = AddToBasketAction | RemoveFromBasketAction; 
