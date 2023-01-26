@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type FormData = {
   email: string;
@@ -9,7 +9,7 @@ type FormData = {
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, signInWithGoogle } = useAuth();
 
   const {
     handleSubmit,
@@ -26,6 +26,15 @@ const LoginForm: React.FC = () => {
       console.error(err);
     }
   };
+
+  /* TODO: Later update this fn!! */
+  const handleRedirectToOrBack = () => {
+    window.location.replace("/profile");
+  }
+
+  const googleLogin = () => {
+    signInWithGoogle()
+  }
 
   return (
     <>
