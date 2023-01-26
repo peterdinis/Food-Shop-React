@@ -1,7 +1,6 @@
 import { Header } from "../shared";
 import useSearchQuery from "../../hooks/useSearchQuery";
 import { useNavigate } from "react-router";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/AuthContext";
 
