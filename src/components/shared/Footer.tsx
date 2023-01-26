@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
           <nav className="flex flex-wrap justify-center -mx-5 -my-2">
             <div className="px-5 py-2">
               <span className="text-3xl leading-6 text-gray-800 hover:text-gray-900">
-                &copy;React FoodShop 2023
+                &copy;FoodReShop 2023
               </span>
             </div>
           </nav>
