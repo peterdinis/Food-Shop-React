@@ -10,18 +10,7 @@ const ProductDetail: React.FC = () => {
   };
 
   const addToBasket = () => {
-    /* dispatch({
-      type: ADD_TO_BASKET, */
-      /* 
-        item: {
-          id: id,
-          title: title,
-          image: image,
-          price: price,
-          description: description
-        }
-      */
-/*     }) */
+    return;
   }
 
   return (
