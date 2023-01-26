@@ -28,6 +28,9 @@ const ProductDetail: React.FC = () => {
               <p className="text-2xl mt-3 font-light leading-relaxed  mb-4 text-gray-800">
                 <span className="font-bold">Krátke info</span>: iiiii
               </p>
+              <p className="text-2xl mt-3 font-light leading-relaxed  mb-4 text-gray-800">
+                <span className="font-bold">Price</span>: 2€
+              </p>
               <button className="mt-4 pl-2 bg-blue-100 p-2 rounded-lg font-bold">Add to Card</button>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
               <button className="mt-10 text-xl" onClick={navigateBack}>
