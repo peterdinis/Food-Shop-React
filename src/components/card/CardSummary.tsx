@@ -1,3 +1,15 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  import.meta.env.VITE_STRIPE_PUBLIC_KEY as string
+);
+
+/* const options = {
+  // passing the client secret obtained from the server
+  clientSecret: import.meta.env.VITE_STRIPE_SECRET_KEY as string,
+}; */
+
 const CardSummary: React.FC = () => {
   return (
     <>
@@ -20,9 +32,11 @@ const CardSummary: React.FC = () => {
             <span>Total cost</span>
             <span>$600</span>
           </div>
-          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
-            Checkout
-          </button>
+          <Elements stripe={stripePromise}>
+            <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+              Checkout
+            </button>
+          </Elements>
         </div>
       </div>
     </>
