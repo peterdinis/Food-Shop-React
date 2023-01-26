@@ -2,9 +2,13 @@ export interface InitialStateI {
     basket: Array<[]>
 }
 
+export const initialState = {
+    basket: [],
+} as InitialStateI;
+
 type AddToBasketAction = {
+    item: [],
     type: string,
-    payload: any
 }
 
-export type BasicAction = AddToBasketAction | any;
+export type BasicAction = AddToBasketAction 

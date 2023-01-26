@@ -1,19 +1,24 @@
-import React, {createContext, useContext, useReducer} from 'react';
-import {InitialStateI} from "../typings/reduxTypings"
-
+import React, { createContext, useContext, useReducer } from "react";
+import { InitialStateI } from "../typings/reduxTypings";
 
 interface IStateContextProps {
-    reducer: any,
-    initialState: InitialStateI,
-    children?: React.ReactNode
+  reducer: any;
+  initialState: InitialStateI;
+  children?: React.ReactNode;
 }
 
 export const StateContext = createContext(null);
 
-export const StateProvider = ({children, initialState, reducer}: IStateContextProps) => {
+export const StateProvider = ({
+  children,
+  initialState,
+  reducer,
+}: IStateContextProps) => {
+  return (
     <StateContext.Provider value={useReducer(reducer, initialState) as any}>
-        {children}
+      {children}
     </StateContext.Provider>
-}
+  );
+};
 
 export const useStateValue = useContext(StateContext);
