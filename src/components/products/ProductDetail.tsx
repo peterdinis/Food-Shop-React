@@ -1,15 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import {useDispatch} from "react-redux";
+import { ADD_TO_BASKET } from "../../typings/constants";
 
 const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const navigateBack = () => {
     navigate("/products");
   };
 
   const addToBasket = () => {
-    return;
+    dispatch({
+      type: ADD_TO_BASKET,
+      /* 
+        item: {
+          id: id,
+          title: title,
+          image: image,
+          price: price,
+          description: description
+        }
+      */
+    })
   }
 
   return (
