@@ -1,7 +1,30 @@
 import ScrollToTop from "../../hooks/useScroll";
 import { Header } from "../shared";
+import { collection, doc, onSnapshot, query } from "firebase/firestore";
+import { firestore } from "../../firebase/init";
+import { useEffect, useState } from "react";
 
 const DisplayAllProducts: React.FC = () => {
+  const [ids, setIds] = useState([]);
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = query(collection(firestore, "products"));
+      onSnapshot(data, (querySnapshot) => {
+        const databaseInfo = [];
+        const dataIds = [];
+        querySnapshot.forEach((doc) => {
+          databaseInfo.push(doc.data().testData);
+          dataIds.push(doc.id);
+        });
+      });
+    };
+    getData();
+  }, []);
+
+  console.log(info);
+
   return (
     <>
       <Header text="All Foods" />
@@ -182,7 +205,7 @@ const DisplayAllProducts: React.FC = () => {
               <p className="pt-1 text-gray-900">£9.99</p>
             </span>
           </div>
-        </div>     
+        </div>
       </section>
       <ScrollToTop />
     </>
