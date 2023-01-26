@@ -1,9 +1,11 @@
 export interface InitialStateI {
-    basket: Array<[]>
+    basket: Array<[]>,
+    count: number
 }
 
 export const initialState = {
     basket: [],
+    count: 0
 } as InitialStateI;
 
 type AddToBasketAction = {

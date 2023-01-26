@@ -1,7 +1,9 @@
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
-import Person4Icon from "@mui/icons-material/Person4";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { useAuth } from "../../context/AuthContext";
+
 const Navbar: React.FC = () => {
+  const { currentUser } = useAuth();
   return (
     <>
       <nav id="header" className="w-full z-30 top-0 py-1">
@@ -37,23 +39,37 @@ const Navbar: React.FC = () => {
                     Products
                   </a>
                 </li>
-
-                <li>
-                  <a
-                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                    href="/login"
-                  >
-                    Login
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                    href="/register"
-                  >
-                    Register
-                  </a>
-                </li>
+                {currentUser === null ? (
+                  <>
+                    <li>
+                      <a
+                        className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                        href="/login"
+                      >
+                        Login
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                        href="/register"
+                      >
+                        Register
+                      </a>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <a
+                        className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                        href="/profile"
+                      >
+                        Profile
+                      </a>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
           </div>
