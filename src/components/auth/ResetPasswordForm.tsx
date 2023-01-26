@@ -1,7 +1,12 @@
+import { Header } from "../shared";
+import useSearchQuery from "../../hooks/useSearchQuery";
+
 const ResetPasswordForm: React.FC = () => {
+    const query = useSearchQuery();
     return (
         <>
-        hhhh
+         <Header text="Reset Password" />
+
         </>
     )
 }
