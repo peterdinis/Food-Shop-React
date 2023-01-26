@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
               className="pl-3 inline-block no-underline hover:text-black"
               href="/card"
             >
-              <ShoppingBasketIcon />
+              <ShoppingBasketIcon /> 0
             </a>
           </div>
         </div>
