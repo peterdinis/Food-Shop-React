@@ -9,6 +9,8 @@ interface IStateContextProps {
 
 export const StateContext = createContext(null);
 
+export const useStateValue = () => useContext(StateContext);
+
 export const StateProvider = ({
   children,
   initialState,
@@ -20,5 +22,3 @@ export const StateProvider = ({
     </StateContext.Provider>
   );
 };
-
-export const useStateValue = useContext(StateContext);

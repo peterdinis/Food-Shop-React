@@ -16,4 +16,4 @@ type RemoveFromBasketAction = {
     type: string,
 }
 
-export type BasicAction = AddToBasketAction | RemoveFromBasketAction; 
+export type BasicAction = AddToBasketAction | RemoveFromBasketAction | any; 
