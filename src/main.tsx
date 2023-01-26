@@ -5,8 +5,8 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./context/AuthContext";
 import { FallBackLoader } from "./components/shared";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
