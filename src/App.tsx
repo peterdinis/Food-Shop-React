@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/shared/Navbar";
+import {Navbar} from "./components/shared";
 import { LandingPage, NotAllowedPage, NotFoundPage } from "./pages";
 import { ProductInfo, ProductsPage } from "./pages/products";
 import { CardPage } from "./pages/card";
