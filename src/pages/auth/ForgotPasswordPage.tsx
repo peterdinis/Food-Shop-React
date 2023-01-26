@@ -1,8 +1,8 @@
+import { ForgotPasswordForm } from "../../components/auth";
+
 const ForgotPasswordPage: React.FC = () => {
     return (
-        <>
-        dddd
-        </>
+       <ForgotPasswordForm />
     )
 }
 

@@ -3,6 +3,7 @@ import useSearchQuery from "../../hooks/useSearchQuery";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../../context/AuthContext";
 
 type FormData = {
   password: string;
@@ -10,8 +11,8 @@ type FormData = {
 
 const ResetPasswordForm: React.FC = () => {
   const query = useSearchQuery();
+  const { resetPassword } = useAuth();
   const navigate = useNavigate();
-  const [password, setPassword] = useState("");
   const {
     handleSubmit,
     formState: { errors },
@@ -19,11 +20,20 @@ const ResetPasswordForm: React.FC = () => {
     register,
   } = useForm<FormData>();
 
+  const onHandleSubmit = (data: FormData) => {
+    try {
+      resetPassword(query.get("oobCode"), data.password);
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <>
       <Header text="Reset Password" />
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-        <form>
+        <form onSubmit={handleSubmit(onHandleSubmit)}>
           <div className="mb-4">
             <div className="mb-2">
               <label

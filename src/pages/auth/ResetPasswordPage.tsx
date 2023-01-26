@@ -1,8 +1,8 @@
+import { ResetPasswordForm } from "../../components/auth";
+
 const ResetPasswordPage: React.FC = () => {
     return (
-        <>
-        dddd
-        </>
+       <ResetPasswordForm />
     )
 }
 
