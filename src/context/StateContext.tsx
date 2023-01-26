@@ -1,8 +1,10 @@
 import React, {createContext, useContext, useReducer} from 'react';
+import {InitialStateI} from "../typings/reduxTypings"
+
 
 interface IStateContextProps {
     reducer: any,
-    initialState: any,
+    initialState: InitialStateI,
     children?: React.ReactNode
 }
 
