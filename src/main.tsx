@@ -8,7 +8,7 @@ import { FallBackLoader } from "./components/shared";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { CardProvider } from "./context/CardContext";
-import stateReducer from "./utils/cardReducer";
+import stateReducer from "./context/reducers/cardReducer";
 import { initialState } from "./typings/reduxTypings";
 
 
