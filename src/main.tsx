@@ -11,6 +11,7 @@ import { StateProvider } from "./context/StateContext";
 import stateReducer from "./utils/stateReducer";
 import { initialState } from "./typings/reduxTypings";
 
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <React.Suspense fallback={<FallBackLoader />}>

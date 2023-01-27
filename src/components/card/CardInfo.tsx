@@ -1,3 +1,4 @@
+import ScrollToTop from "../../hooks/useScroll";
 import CardHeader from "./CardHeader";
 import CardSummary from "./CardSummary";
 import CardTable from "./CardTable";
@@ -26,6 +27,7 @@ const CardInfo: React.FC = () => {
           <CardSummary />
         </div>
       </div>
+      <ScrollToTop />
     </>
   );
 };
