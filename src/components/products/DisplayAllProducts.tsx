@@ -4,10 +4,13 @@ import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebase/init";
 import { useEffect, useState } from "react";
 import { IProduct } from "../../typings/productTypings";
+import { useCardValue } from "../../context/CardContext";
+import { ADD_TO_BASKET } from "../../typings/constants";
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
   const productsCollectionRef = collection(firestore, "products");
+  const [state, dispatch]= useCardValue() as any;
 
   useEffect(() => {
     const getProducts = async () => {
@@ -19,8 +22,6 @@ const DisplayAllProducts: React.FC = () => {
 
     getProducts();
   }, []);
-
-  console.log(products);
 
   return (
     <>
@@ -39,7 +40,18 @@ const DisplayAllProducts: React.FC = () => {
                       />
                       <div className="pt-3 flex items-center justify-between">
                         <p>{item.name}</p>
-                        <button>
+                        <button onClick={() => {
+                          console.log("PING");
+                          dispatch({
+                            type: ADD_TO_BASKET,
+                            item: {
+                              id: item.id,
+                              name: item.name,
+                              image: item.image,
+                              price: item.price
+                            }
+                          })
+                        }}>
                           <a>Add to Card</a>
                         </button>
                       </div>

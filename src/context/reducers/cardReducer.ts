@@ -2,6 +2,7 @@ import { ADD_TO_BASKET, REMOVE_ALL_ITEMS_FROM_BASKET, REMOVE_FROM_BASKET } from 
 import { BasicAction, InitialStateI } from "../../typings/reduxTypings";
 
 const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI => {
+    console.log(action);
     switch (action.type) {
       case ADD_TO_BASKET:
         return {
