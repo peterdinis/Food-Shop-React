@@ -1,4 +1,7 @@
+import { useCardValue } from "../../context/CardContext"
+
 const CardTable: React.FC = () => {
+  const [state, dispatch] = useCardValue() as any;
     return (
         <>
         <div className="flex mt-10 mb-5">
