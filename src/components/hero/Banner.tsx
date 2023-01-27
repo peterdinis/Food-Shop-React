@@ -6,6 +6,9 @@ const Banner: React.FC = () => {
           <h2 className="font-bold text-2xl mb-12">
             Quality food for good prices
           </h2>
+          <button className="bg-blue-100 p-2 rounded-lg text-xl font-bold text-black">
+            <a href="/products">Our Quality food</a>
+          </button>
         </div>
       </div>
   );
