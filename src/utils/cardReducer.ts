@@ -7,12 +7,14 @@ const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI 
       case ADD_TO_BASKET:
         return {
             ...state,
+            count: state.count + 1,
             basket: [...state.basket, action.item]
         }
 
       case REMOVE_FROM_BASKET:
         return {
           ...state,
+          count: state.count - 1,
           basket: state.basket.filter(((item: any) => item.id !== action.id))
         }
 
