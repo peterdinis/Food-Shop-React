@@ -19,6 +19,7 @@
     "@stripe/stripe-js": "^1.46.0",
     "axios": "^1.2.3",
     "firebase": "^9.16.0",
+    "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
@@ -27,6 +28,7 @@
     "react-toastify": "^9.1.1"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.7",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@types/react-lazy-load-image-component": "^1.5.2",
