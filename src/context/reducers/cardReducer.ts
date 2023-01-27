@@ -9,8 +9,6 @@ export const getBasketTotal = (basket: any[]) => {
 
 
 const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI => {
-
-    console.log(action);
     switch (action.type) {
       case ADD_TO_BASKET:
         return {
