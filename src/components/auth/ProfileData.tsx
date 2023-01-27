@@ -10,11 +10,10 @@ const ProfileData: React.FC = () => {
     navigate("/");
   };
 
+  console.log(currentUser);
+
   return (
     <div className="container mx-auto my-60">
-      {/* <h2>{currentUser?.email}</h2>
-            <button onClick={handleLogout}>Logout</button> */}
-
       <div className="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 mx-auto">
         <div className="flex justify-center">
           <img
