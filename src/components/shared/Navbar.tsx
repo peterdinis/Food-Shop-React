@@ -34,9 +34,9 @@ const Navbar: React.FC = () => {
                 <li>
                   <a
                     className="no-underline font-bold inline-block  hover:text-black hover:underline py-2 px-4"
-                    href="/products"
+                    href="/foods"
                   >
-                    Products
+                    Foods
                   </a>
                 </li>
                 {currentUser === null ? (
