@@ -117,7 +117,6 @@ const ReviewBody: React.FC = () => {
                 </svg>
               </div>
             </div>
-            {/* className={"md:block " + (menu1 ? "block" : "hidden")} */}
             <div className={"md:block " + (menu ? "block" : "hidden")}>
               <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">
                 When you want to decorate your home, the idea of choosing a
@@ -335,43 +334,6 @@ const ReviewBody: React.FC = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </div>
-              </div>
-              <div className={"md:block " + (menu1 ? "block" : "hidden")}>
-                <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">
-                  This style relies more on neutral colors with little to no
-                  embellishment on furniture. Lighter fabrics, such as silk and
-                  cotton, are popular, as are lighter colors in wood and metal.
-                </p>
-                <div className="mt-6 flex flex-row justify-start items-start space-x-4">
-                  <div className="py-4 px-8 bg-gray-100">
-                    <img
-                      src="https://i.ibb.co/xfg5T5T/sam-moqadam-kvmds-Tr-GOBM-unsplash-removebg-preview-1.png"
-                      alt="chair-5"
-                    />
-                  </div>
-                  <div className="py-4 px-8 bg-gray-100">
-                    <img
-                      src="https://i.ibb.co/54F7vvV/Group-1855.png"
-                      alt="chair-6"
-                    />
-                  </div>
-                </div>
-                <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">
-                  <div>
-                    <img
-                      src="https://i.ibb.co/RCTGZTc/Mask-Group-1.png"
-                      alt="girl-avatar"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-start items-start space-y-2">
-                    <p className="text-base font-medium leading-none text-gray-800">
-                      James Schofield
-                    </p>
-                    <p className="text-sm leading-none text-gray-600">
-                      23 June 2021
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

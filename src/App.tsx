@@ -4,6 +4,7 @@ import { LandingPage, NotAllowedPage, NotFoundPage } from "./pages";
 import { ProductsPage } from "./pages/products";
 import { CardPage } from "./pages/card";
 import { RegisterPage, LoginPage, ProfilePage, ForgotPasswordPage, ResetPasswordPage } from "./pages/auth";
+import { CreateReviewPage } from "./pages/reviews";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/card" element={<CardPage />} />
+        <Route path="/create/review" element={<CreateReviewPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
