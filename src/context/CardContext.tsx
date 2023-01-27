@@ -7,18 +7,18 @@ interface IStateContextProps {
   children?: React.ReactNode;
 }
 
-export const StateContext = createContext(null);
+export const CardContext = createContext(null);
 
-export const useStateValue = () => useContext(StateContext);
+export const useCardValue = () => useContext(CardContext);
 
-export const StateProvider = ({
+export const CardProvider = ({
   children,
   initialState,
   reducer,
 }: IStateContextProps) => {
   return (
-    <StateContext.Provider value={useReducer(reducer, initialState) as any}>
+    <CardContext.Provider value={useReducer(reducer, initialState) as any}>
       {children}
-    </StateContext.Provider>
+    </CardContext.Provider>
   );
 };
