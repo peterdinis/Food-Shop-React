@@ -1,29 +1,21 @@
 import ScrollToTop from "../../hooks/useScroll";
 import { Header } from "../shared";
-import { collection, doc, onSnapshot, query } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebase/init";
 import { useEffect, useState } from "react";
 
 const DisplayAllProducts: React.FC = () => {
-  const [ids, setIds] = useState([]);
-  const [info, setInfo] = useState([]);
+  const [products, setProduts] = useState([]);
+  const productsCollectionRef = collection(firestore, "products");
 
   useEffect(() => {
-    const getData = async () => {
-      const data = query(collection(firestore, "products"));
-      onSnapshot(data, (querySnapshot) => {
-        const databaseInfo = [];
-        const dataIds = [];
-        querySnapshot.forEach((doc) => {
-          databaseInfo.push(doc.data().testData);
-          dataIds.push(doc.id);
-        });
-      });
-    };
-    getData();
-  }, []);
+    const getProducts = async() => {
+      const data = await getDocs(productsCollectionRef);
+      console.log(data);
+    }
 
-  console.log(info);
+    getProducts();
+  }, []);
 
   return (
     <>
