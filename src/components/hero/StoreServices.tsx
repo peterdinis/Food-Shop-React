@@ -1,5 +1,4 @@
 const StoreServices: React.FC = () => {
-
   return (
     <section className="bg-white py-8">
       <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
@@ -8,7 +7,7 @@ const StoreServices: React.FC = () => {
             <span
               className="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
             >
-              Our Top Products
+              Our Top Foods
             </span>
           </div>
         </nav>
