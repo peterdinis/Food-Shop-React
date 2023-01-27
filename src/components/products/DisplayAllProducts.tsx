@@ -40,7 +40,7 @@ const DisplayAllProducts: React.FC = () => {
                       <div className="pt-3 flex items-center justify-between">
                         <p>{item.name}</p>
                         <button>
-                          <a href="/product/1">Detail</a>
+                          <a>Add to Card</a>
                         </button>
                       </div>
                       <p className="pt-1 text-gray-900">{item.price}</p>

@@ -18,4 +18,9 @@ type RemoveFromBasketAction = {
     type: string,
 }
 
-export type BasicAction = AddToBasketAction | RemoveFromBasketAction | any; 
+type RemoveAllItemsFromBasket = {
+    type: string,
+    item: []
+}
+
+export type BasicAction = AddToBasketAction | RemoveFromBasketAction | RemoveAllItemsFromBasket | any; 
