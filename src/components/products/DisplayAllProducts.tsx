@@ -3,6 +3,7 @@ import { Header } from "../shared";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebase/init";
 import { useEffect, useState } from "react";
+import { IProduct } from "../../typings/productTypings";
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
@@ -27,7 +28,7 @@ const DisplayAllProducts: React.FC = () => {
       <section className="bg-white py-8">
         <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
           {products &&
-            products.map((item: any) => {
+            products.map((item: IProduct) => {
               return (
                 <>
                   <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
