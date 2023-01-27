@@ -1,7 +1,9 @@
+import { Header } from "../shared";
+
 const CheckoutWrapper: React.FC = () => {
     return (
         <>
-        ddddddddddddddd
+         <Header text="Checkout page" />
         </>
     )
 }

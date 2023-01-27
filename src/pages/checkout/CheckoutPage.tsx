@@ -1,8 +1,8 @@
+import { CheckoutWrapper } from "../../components/checkout";
+
 const CheckoutPage: React.FC = () => {
     return (
-        <>
-         CHECKOUT
-        </>
+       <CheckoutWrapper />
     )
 }
 
