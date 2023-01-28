@@ -1,6 +1,7 @@
 import { useCardValue } from "../../context/CardContext";
 import { useMemo } from "react";
 import { IProduct } from "../../typings/productTypings";
+import { REMOVE_FROM_BASKET } from "../../typings/constants";
 
 const CardTable: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;
@@ -19,12 +20,18 @@ const CardTable: React.FC = () => {
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">{item.name}</span>
-                      <a
-                        href="#"
+                      <button onClick={() => {
+                        dispatch({
+                          type: REMOVE_FROM_BASKET,
+                          item: {
+                            id: item.id,
+                          }
+                        })
+                      }}
                         className="font-semibold hover:text-red-500 text-gray-500 text-xs"
                       >
                         Remove from card
-                      </a>
+                      </button>
                     </div>
                   </div>
                   <div className="flex justify-center w-1/5">
