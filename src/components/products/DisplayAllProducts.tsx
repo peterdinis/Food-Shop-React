@@ -2,15 +2,18 @@ import ScrollToTop from "../../hooks/useScroll";
 import { Header } from "../shared";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebase/init";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { IProduct } from "../../typings/productTypings";
 import { useCardValue } from "../../context/CardContext";
 import { ADD_TO_BASKET } from "../../typings/constants";
+import useImageOnLoad from "../../hooks/useImageLoad";
+import { style } from "./style";
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
   const productsCollectionRef = collection(firestore, "products");
   const [state, dispatch]= useCardValue() as any;
+  const { handleImageOnLoad} = useImageOnLoad()
 
   useEffect(() => {
     const getProducts = async () => {
@@ -35,8 +38,10 @@ const DisplayAllProducts: React.FC = () => {
                   <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
                     <span>
                       <img
+                        style={{ ...style.image}}                       
                         className="hover:grow hover:shadow-lg"
                         src={item.image}
+                        onLoad={handleImageOnLoad}
                       />
                       <div className="pt-3 flex items-center justify-between">
                         <p>{item.name}</p>
