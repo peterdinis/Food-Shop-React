@@ -4,6 +4,7 @@ import { useState, ReactNode, FormEvent} from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import {style} from "./style";
+import PaymentInfo from './PaymentInfo';
 
 interface IPaymentModalProps {
   children?: ReactNode;
@@ -45,9 +46,11 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
               Pay for order
             </h2>
             <br />
-            <form onSubmit={handleSubmit}>
+            <PaymentInfo />
+            <br />
+            <form className="mt-6" onSubmit={handleSubmit}>
               <CardElement />
-              <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
+              <button className="mt-10 bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
                 Pay
               </button>
             </form>
