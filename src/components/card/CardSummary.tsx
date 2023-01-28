@@ -3,6 +3,10 @@ import { getBasketTotal } from "../../context/reducers/cardReducer";
 
 const CardSummary: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;
+
+  const totalItems = getBasketTotal(state.basket) as any;
+  console.log(totalItems);
+
   return (
     <>
       <div id="summary" className="w-1/4 px-8 py-10">
@@ -15,7 +19,7 @@ const CardSummary: React.FC = () => {
         <div className="border-t mt-8">
           <div className="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Total cost</span>
-            <span>1111€</span>
+            <span>{totalItems}€</span>
           </div>
           <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
             Checkout
