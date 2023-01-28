@@ -8,13 +8,16 @@ import { useCardValue } from "../../context/CardContext";
 import { ADD_TO_BASKET } from "../../typings/constants";
 import useImageOnLoad from "../../hooks/useImageLoad";
 import { style } from "./style";
-import { Link } from "react-router-dom";
+import {toast} from "react-toastify";
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
   const productsCollectionRef = collection(firestore, "products");
   const [state, dispatch]= useCardValue() as any;
-  const { handleImageOnLoad} = useImageOnLoad()
+  const { handleImageOnLoad} = useImageOnLoad();
+
+
+  const notify = () => toast.success("New item was add to card!")
 
   useEffect(() => {
     const getProducts = async () => {
@@ -47,7 +50,7 @@ const DisplayAllProducts: React.FC = () => {
                       <div className="pt-3 flex items-center justify-between">
                         <p>{item.name}</p>
                         <button onClick={() => {
-                          console.log("PING");
+                          notify();
                           dispatch({
                             type: ADD_TO_BASKET,
                             item: {
