@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const Banner: React.FC = () => {
   return (
     <div className="w-full h-screen bg-opacity-50 bg-black flex justify-center items-center">
@@ -7,7 +9,7 @@ const Banner: React.FC = () => {
           Quality food for good prices
         </h2>
         <button className="bg-blue-100 p-2 rounded-lg text-xl font-bold text-black">
-          <a href="/products">Our Quality food</a>
+          <Link to="/products">Our Quality food</Link>
         </button>
       </div>
     </div>

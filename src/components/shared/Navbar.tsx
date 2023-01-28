@@ -1,9 +1,12 @@
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { useAuth } from "../../context/AuthContext";
+import { useCardValue } from "../../context/CardContext";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const { currentUser } = useAuth();
+  const [state] = useCardValue() as any;
   return (
     <>
       <nav id="header" className="w-full z-30 top-0 py-1">
@@ -32,41 +35,41 @@ const Navbar: React.FC = () => {
             <nav>
               <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                 <li>
-                  <a
+                  <Link
                     className="no-underline font-bold inline-block  hover:text-black hover:underline py-2 px-4"
-                    href="/products"
+                    to="/products"
                   >
                     Products
-                  </a>
+                  </Link>
                 </li>
                 {currentUser === null ? (
                   <>
                     <li>
-                      <a
+                      <Link
                         className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                        href="/login"
+                        to="/login"
                       >
                         Login
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                        href="/register"
+                        to="/register"
                       >
                         Register
-                      </a>
+                      </Link>
                     </li>
                   </>
                 ) : (
                   <>
                     <li>
-                      <a
+                      <Link
                         className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                        href="/profile"
+                        to="/profile"
                       >
                         Profile
-                      </a>
+                      </Link>
                     </li>
                   </>
                 )}
@@ -75,25 +78,25 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="order-1 md:order-2">
-            <a
+            <Link
               className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-              href="/"
+              to="/"
             >
               <RestaurantMenuIcon />
               FoodReShop
-            </a>
+            </Link>
           </div>
 
           <div
             className="order-2 md:order-3 flex items-center"
             id="nav-content"
           >
-            <a
+            <Link
               className="pl-3 inline-block no-underline hover:text-black"
-              href="/card"
+              to="/card"
             >
-              <ShoppingBasketIcon /> 0
-            </a>
+              <ShoppingBasketIcon /> {state.count}
+            </Link>
           </div>
         </div>
       </nav>
