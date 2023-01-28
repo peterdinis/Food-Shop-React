@@ -1,12 +1,9 @@
 import { useCardValue } from '../../context/CardContext';
-import { getBasketTotal } from '../../context/reducers/cardReducer';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements } from '@stripe/react-stripe-js';
+import { PaymentModal } from '../payments';
 
 const CardSummary: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;
-
-  const promise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY as string);
 
   return (
     <>
@@ -22,11 +19,7 @@ const CardSummary: React.FC = () => {
             <span>Total cost</span>
             <span>1111€</span>
           </div>
-          <Elements stripe={promise}>
-            <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
-              Pay
-            </button>
-          </Elements>
+          <PaymentModal />
         </div>
       </div>
     </>
