@@ -48,8 +48,9 @@ const DisplayAllProducts: React.FC = () => {
                         onLoad={handleImageOnLoad}
                       />
                       <div className="pt-3 flex items-center justify-between">
-                        <p>{item.name}</p>
-                        <button onClick={() => {
+                        <p className="font-bold">{item.name}</p>
+                        <button className="bg-blue-100 rounded-lg font-bold p-1" 
+                        onClick={() => {
                           notify();
                           dispatch({
                             type: ADD_TO_BASKET,
@@ -64,7 +65,7 @@ const DisplayAllProducts: React.FC = () => {
                           Add to Card
                         </button>
                       </div>
-                      <p className="pt-1 text-gray-900">{item.price}</p>
+                      <p className="pt-1 text-gray-900 font-bold">{item.price}€</p>
                     </span>
                   </div>
                 </>
