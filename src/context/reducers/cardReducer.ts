@@ -8,7 +8,7 @@ import {
 import { IProduct } from "../../typings/productTypings";
 import { BasicAction, InitialStateI } from "../../typings/reduxTypings";
 
-export const getBasketTotal = (basket: any[]) => {
+export const getBasketTotal = (basket: any) => {
   basket?.reduce((amount: number, item: IProduct) => item.price + amount, 0);
 };
 

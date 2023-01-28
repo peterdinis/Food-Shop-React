@@ -23,9 +23,7 @@ const CardTable: React.FC = () => {
                       <button onClick={() => {
                         dispatch({
                           type: REMOVE_FROM_BASKET,
-                          item: {
-                            id: item.id,
-                          }
+                          item
                         })
                       }}
                         className="font-semibold hover:text-red-500 text-gray-500 text-xs"
