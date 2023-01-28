@@ -8,6 +8,7 @@ import { useCardValue } from "../../context/CardContext";
 import { ADD_TO_BASKET } from "../../typings/constants";
 import useImageOnLoad from "../../hooks/useImageLoad";
 import { style } from "./style";
+import { Link } from "react-router-dom";
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
@@ -57,7 +58,7 @@ const DisplayAllProducts: React.FC = () => {
                             }
                           })
                         }}>
-                          <a>Add to Card</a>
+                          Add to Card
                         </button>
                       </div>
                       <p className="pt-1 text-gray-900">{item.price}</p>

@@ -7,14 +7,13 @@ export const getBasketTotal = (basket: any[]) => {
   basket?.reduce((amount: number, item: IProduct) =>item.price + amount, 0);
 }
 
-
 const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI => {
     switch (action.type) {
       case ADD_TO_BASKET:
         return {
             ...state,
             count: state.count + 1,
-            basket: [...state.basket, action.item]
+            basket: [...state.basket, action.item],
         }
 
       case REMOVE_FROM_BASKET:
