@@ -1,4 +1,4 @@
-import { CardInfo } from ".";
+import { CardInfo } from '.';
 
 const CardWrapper: React.FC = () => {
   return (

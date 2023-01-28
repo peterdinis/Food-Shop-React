@@ -1,6 +1,6 @@
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 type FormData = {
   email: string;
@@ -21,7 +21,7 @@ const RegisterForm: React.FC = () => {
   const onHandleSubmit = (data: FormData) => {
     try {
       registerUser(data.email, data.password);
-      navigate("/login");
+      navigate('/login');
     } catch (err) {
       console.error(err);
     }
@@ -46,15 +46,15 @@ const RegisterForm: React.FC = () => {
                 type="email"
                 required={true}
                 placeholder="email@email.com"
-                {...register("email", {
-                  required: "Email is Required!!!",
+                {...register('email', {
+                  required: 'Email is Required!!!',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("email");
+                  trigger('email');
                 }}
               />
 
@@ -76,25 +76,25 @@ const RegisterForm: React.FC = () => {
                 placeholder="**********************************"
                 autoComplete="off"
                 required={true}
-                {...register("password", {
-                  required: "You must specify a password",
+                {...register('password', {
+                  required: 'You must specify a password',
                   pattern: {
                     value:
-                      "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$" as any,
+                      '^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$' as any,
                     message:
-                      "Password should contain at least one number and one    special character",
+                      'Password should contain at least one number and one    special character',
                   },
                   minLength: {
                     value: 8,
-                    message: "Password must be more than 8 characters",
+                    message: 'Password must be more than 8 characters',
                   },
                   maxLength: {
                     value: 20,
-                    message: "Password must be less than 20 characters",
+                    message: 'Password must be less than 20 characters',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("password");
+                  trigger('password');
                 }}
               />
 
@@ -104,7 +104,10 @@ const RegisterForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className="mt-4 bg-blue-100 p-2 rounded-lg font-bold" type="submit">
+            <button
+              className="mt-4 bg-blue-100 p-2 rounded-lg font-bold"
+              type="submit"
+            >
               Register
             </button>
             <div>

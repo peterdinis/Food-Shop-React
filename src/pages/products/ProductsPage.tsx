@@ -1,4 +1,4 @@
-import { DisplayAllProducts } from "../../components/products";
+import { DisplayAllProducts } from '../../components/products';
 
 const ProductsPage: React.FC = () => {
   return <DisplayAllProducts />;

@@ -1,7 +1,7 @@
-import { Header } from "../shared";
-import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../context/AuthContext";
+import { Header } from '../shared';
+import { useNavigate } from 'react-router';
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/AuthContext';
 
 type FormData = {
   email: string;
@@ -20,7 +20,7 @@ const ForgotPasswordForm: React.FC = () => {
   const onHandleSubmit = (data: FormData) => {
     try {
       forgotPassword(data.email);
-      navigate("/login");
+      navigate('/login');
     } catch (err) {
       console.error(err);
     }
@@ -46,15 +46,15 @@ const ForgotPasswordForm: React.FC = () => {
                 placeholder="**********************************"
                 autoComplete="off"
                 required={true}
-                {...register("email", {
-                  required: "Email is Required!!!",
+                {...register('email', {
+                  required: 'Email is Required!!!',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("email");
+                  trigger('email');
                 }}
               />
 

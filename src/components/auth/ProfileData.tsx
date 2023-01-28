@@ -1,5 +1,5 @@
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileData: React.FC = () => {
   const { currentUser, logout } = useAuth();
@@ -7,7 +7,7 @@ const ProfileData: React.FC = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate('/');
   };
 
   console.log(currentUser);
@@ -25,10 +25,15 @@ const ProfileData: React.FC = () => {
 
         <div className="mt-10">
           <h1 className="font-bold text-center text-3xl text-gray-900">
-          {currentUser?.email}
+            {currentUser?.email}
           </h1>
           <p className="text-center text-sm text-gray-400 font-medium">
-          <button className="mt-10 text-xl text-black font-bold" onClick={handleLogout}>Logout</button>
+            <button
+              className="mt-10 text-xl text-black font-bold"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           </p>
           <h4 className="mt-6 ml-4">My Last Orders</h4>
           <div className="flex justify-between items-center my-5 px-6">

@@ -1,29 +1,27 @@
-import ScrollToTop from "../../hooks/useScroll";
-import { FallBackLoader, Header } from "../shared";
-import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "../../firebase/init";
-import { useEffect, useState, Suspense } from "react";
-import { IProduct } from "../../typings/productTypings";
-import { useCardValue } from "../../context/CardContext";
-import { ADD_TO_BASKET } from "../../typings/constants";
-import useImageOnLoad from "../../hooks/useImageLoad";
-import { style } from "./style";
-import { toast } from "react-toastify";
+import ScrollToTop from '../../hooks/useScroll';
+import { FallBackLoader, Header } from '../shared';
+import { collection, getDocs } from 'firebase/firestore';
+import { firestore } from '../../firebase/init';
+import { useEffect, useState, Suspense } from 'react';
+import { IProduct } from '../../typings/productTypings';
+import { useCardValue } from '../../context/CardContext';
+import { ADD_TO_BASKET } from '../../typings/constants';
+import useImageOnLoad from '../../hooks/useImageLoad';
+import { style } from './style';
+import { toast } from 'react-toastify';
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
-  const productsCollectionRef = collection(firestore, "products");
+  const productsCollectionRef = collection(firestore, 'products');
   const [state, dispatch] = useCardValue() as any;
   const { handleImageOnLoad } = useImageOnLoad();
 
-  const notify = () => toast.success("New item was add to card!");
+  const notify = () => toast.success('New item was add to card!');
 
   useEffect(() => {
     const getProducts = async () => {
       const data = await getDocs(productsCollectionRef);
-      setProduts(
-        data.docs.map((doc) => ({ ...doc.data(), id: doc.id })) as any
-      );
+      setProduts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })) as any);
     };
 
     getProducts();

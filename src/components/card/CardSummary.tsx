@@ -1,5 +1,5 @@
-import { useCardValue } from "../../context/CardContext";
-import { getBasketTotal } from "../../context/reducers/cardReducer";
+import { useCardValue } from '../../context/CardContext';
+import { getBasketTotal } from '../../context/reducers/cardReducer';
 
 const CardSummary: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;

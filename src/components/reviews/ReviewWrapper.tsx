@@ -1,5 +1,5 @@
-import ReviewBody from "./ReviewBody";
-import ReviewHeader from "./ReviewHeader";
+import ReviewBody from './ReviewBody';
+import ReviewHeader from './ReviewHeader';
 
 const ReviewWrapper: React.FC = () => {
   return (

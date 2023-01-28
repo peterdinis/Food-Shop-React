@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation } from 'react-router';
 
 function useSearchQuery() {
   const location = useLocation();
@@ -6,4 +6,4 @@ function useSearchQuery() {
   return new URLSearchParams(location.search);
 }
 
-export default useSearchQuery
+export default useSearchQuery;

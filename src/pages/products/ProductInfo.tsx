@@ -1,9 +1,7 @@
-import { ProductDetail } from "../../components/products";
+import { ProductDetail } from '../../components/products';
 
 const ProductInfo: React.FC = () => {
-  return (
-    <ProductDetail />
-  );
+  return <ProductDetail />;
 };
 
 export default ProductInfo;
