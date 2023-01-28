@@ -1,8 +1,8 @@
-import { Header } from "../shared";
-import useSearchQuery from "../../hooks/useSearchQuery";
-import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../context/AuthContext";
+import { Header } from '../shared';
+import useSearchQuery from '../../hooks/useSearchQuery';
+import { useNavigate } from 'react-router';
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/AuthContext';
 
 type FormData = {
   password: string;
@@ -21,8 +21,8 @@ const ResetPasswordForm: React.FC = () => {
 
   const onHandleSubmit = (data: FormData) => {
     try {
-      resetPassword(query.get("oobCode"), data.password);
-      navigate("/login");
+      resetPassword(query.get('oobCode'), data.password);
+      navigate('/login');
     } catch (err) {
       console.error(err);
     }
@@ -48,25 +48,25 @@ const ResetPasswordForm: React.FC = () => {
                 placeholder="**********************************"
                 autoComplete="off"
                 required={true}
-                {...register("password", {
-                  required: "You must specify a password",
+                {...register('password', {
+                  required: 'You must specify a password',
                   pattern: {
                     value:
-                      "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$" as any,
+                      '^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$' as any,
                     message:
-                      "Password should contain at least one number and one    special character",
+                      'Password should contain at least one number and one    special character',
                   },
                   minLength: {
                     value: 8,
-                    message: "Password must be more than 8 characters",
+                    message: 'Password must be more than 8 characters',
                   },
                   maxLength: {
                     value: 20,
-                    message: "Password must be less than 20 characters",
+                    message: 'Password must be less than 20 characters',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("password");
+                  trigger('password');
                 }}
               />
 

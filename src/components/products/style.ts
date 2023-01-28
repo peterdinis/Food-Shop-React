@@ -1,7 +1,7 @@
-import { CSSProperties } from "react";
+import { CSSProperties } from 'react';
 
 export const style: { [key: string]: CSSProperties } = {
   image: {
-    margin: "auto",
+    margin: 'auto',
   },
 };

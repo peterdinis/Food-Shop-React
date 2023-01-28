@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useReducer } from "react";
-import { InitialStateI } from "../typings/reduxTypings";
+import React, { createContext, useContext, useReducer } from 'react';
+import { InitialStateI } from '../typings/reduxTypings';
 
 interface IStateContextProps {
   reducer: any;

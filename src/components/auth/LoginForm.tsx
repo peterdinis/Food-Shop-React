@@ -1,6 +1,6 @@
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 type FormData = {
   email: string;
@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
   const onHandleSubmit = (data: FormData) => {
     try {
       login(data.email, data.password);
-      navigate("/profile");
+      navigate('/profile');
     } catch (err) {
       console.error(err);
     }
@@ -29,12 +29,12 @@ const LoginForm: React.FC = () => {
 
   /* TODO: Later update this fn!! */
   const handleRedirectToOrBack = () => {
-    window.location.replace("/profile");
-  }
+    window.location.replace('/profile');
+  };
 
   const googleLogin = () => {
-    signInWithGoogle()
-  }
+    signInWithGoogle();
+  };
 
   return (
     <>
@@ -55,15 +55,15 @@ const LoginForm: React.FC = () => {
                 placeholder="email@email.com"
                 type="email"
                 required={true}
-                {...register("email", {
-                  required: "Email is Required!!!",
+                {...register('email', {
+                  required: 'Email is Required!!!',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
+                    message: 'Invalid email address',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("email");
+                  trigger('email');
                 }}
               />
 
@@ -85,25 +85,25 @@ const LoginForm: React.FC = () => {
                 autoComplete="off"
                 placeholder="*****************************"
                 required={true}
-                {...register("password", {
-                  required: "You must specify a password",
+                {...register('password', {
+                  required: 'You must specify a password',
                   pattern: {
                     value:
-                      "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$" as any,
+                      '^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$' as any,
                     message:
-                      "Password should contain at least one number and one    special character",
+                      'Password should contain at least one number and one    special character',
                   },
                   minLength: {
                     value: 8,
-                    message: "Password must be more than 8 characters",
+                    message: 'Password must be more than 8 characters',
                   },
                   maxLength: {
                     value: 20,
-                    message: "Password must be less than 20 characters",
+                    message: 'Password must be less than 20 characters',
                   },
                 })}
                 onKeyUp={() => {
-                  trigger("password");
+                  trigger('password');
                 }}
               />
 
@@ -113,7 +113,10 @@ const LoginForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className="mt-4 bg-blue-100 p-2 rounded-lg font-bold" type="submit">
+            <button
+              className="mt-4 bg-blue-100 p-2 rounded-lg font-bold"
+              type="submit"
+            >
               Login
             </button>
             <div>

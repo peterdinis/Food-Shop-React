@@ -1,10 +1,16 @@
-import { Routes, Route } from "react-router-dom";
-import {Navbar} from "./components/shared";
-import { LandingPage, NotAllowedPage, NotFoundPage } from "./pages";
-import { ProductsPage } from "./pages/products";
-import { CardPage } from "./pages/card";
-import { RegisterPage, LoginPage, ProfilePage, ForgotPasswordPage, ResetPasswordPage } from "./pages/auth";
-import { CreateReviewPage } from "./pages/reviews";
+import { Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/shared';
+import { LandingPage, NotAllowedPage, NotFoundPage } from './pages';
+import { ProductsPage } from './pages/products';
+import { CardPage } from './pages/card';
+import {
+  RegisterPage,
+  LoginPage,
+  ProfilePage,
+  ForgotPasswordPage,
+  ResetPasswordPage,
+} from './pages/auth';
+import { CreateReviewPage } from './pages/reviews';
 
 function App() {
   return (

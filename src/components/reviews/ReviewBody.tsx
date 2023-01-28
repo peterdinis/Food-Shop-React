@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const ReviewBody: React.FC = () => {
   const [menu, setMenu] = useState(true);
@@ -20,7 +20,7 @@ const ReviewBody: React.FC = () => {
                 >
                   <svg
                     className={
-                      "transform " + (menu ? "rotate-180" : "rotate-0")
+                      'transform ' + (menu ? 'rotate-180' : 'rotate-0')
                     }
                     width="20"
                     height="20"
@@ -117,7 +117,7 @@ const ReviewBody: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <div className={"md:block " + (menu ? "block" : "hidden")}>
+            <div className={'md:block ' + (menu ? 'block' : 'hidden')}>
               <p className="mt-3 text-base leading-normal text-gray-600 w-full md:w-9/12 xl:w-5/6">
                 When you want to decorate your home, the idea of choosing a
                 decorative theme can seem daunting. Some themes seem to have an
@@ -239,7 +239,7 @@ const ReviewBody: React.FC = () => {
                   >
                     <svg
                       className={
-                        "transform " + (menu1 ? "rotate-180" : "rotate-0")
+                        'transform ' + (menu1 ? 'rotate-180' : 'rotate-0')
                       }
                       width="20"
                       height="20"

@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export const CardPage = React.lazy(() =>import("./CardPage"));
+export const CardPage = React.lazy(() => import('./CardPage'));

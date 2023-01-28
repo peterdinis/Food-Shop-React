@@ -1,9 +1,7 @@
-import CardWrapper from "../../components/card/CardWrapper";
+import CardWrapper from '../../components/card/CardWrapper';
 
 const CardPage: React.FC = () => {
-    return (
-        <CardWrapper />
-    )
-}
+  return <CardWrapper />;
+};
 
 export default CardPage;

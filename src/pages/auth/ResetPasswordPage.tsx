@@ -1,9 +1,7 @@
-import { ResetPasswordForm } from "../../components/auth";
+import { ResetPasswordForm } from '../../components/auth';
 
 const ResetPasswordPage: React.FC = () => {
-    return (
-       <ResetPasswordForm />
-    )
-}
+  return <ResetPasswordForm />;
+};
 
 export default ResetPasswordPage;

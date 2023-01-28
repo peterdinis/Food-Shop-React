@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 export default function ScrollToTop() {
@@ -7,7 +7,7 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -20,9 +20,9 @@ export default function ScrollToTop() {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   return (

@@ -1,8 +1,8 @@
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { useAuth } from "../../context/AuthContext";
-import { useCardValue } from "../../context/CardContext";
-import { Link } from "react-router-dom";
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useAuth } from '../../context/AuthContext';
+import { useCardValue } from '../../context/CardContext';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const { currentUser } = useAuth();

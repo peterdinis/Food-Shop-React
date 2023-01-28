@@ -1,8 +1,10 @@
 interface IReviewHeaderProps {
-    text: string;
+  text: string;
 }
 
-const ReviewHeader: React.FC<IReviewHeaderProps> = ({text}: IReviewHeaderProps) => {
+const ReviewHeader: React.FC<IReviewHeaderProps> = ({
+  text,
+}: IReviewHeaderProps) => {
   return (
     <>
       <nav className="w-full z-30 top-0 px-6 py-1">
