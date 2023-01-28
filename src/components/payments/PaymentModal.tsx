@@ -1,22 +1,10 @@
 import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, FormEvent, SyntheticEvent } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
-const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
+import {style} from "./style";
 
 interface IPaymentModalProps {
   children?: ReactNode;
@@ -27,8 +15,19 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
 }: IPaymentModalProps) => {
   const promise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY as string);
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState(null);
+  const [disabled, setDisabled] = useState(true);
+  
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    return;
+  };
+
+  const handleChange = (e: SyntheticEvent) => {
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -41,7 +40,10 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
       >
         <Box sx={style}>
           <Elements stripe={promise}>
-            <h2 className="text-center mt-4 text-lg font-bold">Pay for order</h2><br />
+            <h2 className="text-center mt-4 text-lg font-bold">
+              Pay for order
+            </h2>
+            <br />
             <form>
               <CardElement />
               <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
