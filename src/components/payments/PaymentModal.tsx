@@ -1,8 +1,7 @@
 import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { useState, ReactNode, FormEvent, SyntheticEvent } from 'react';
+import { useState, ReactNode, FormEvent} from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import {style} from "./style";
 
@@ -25,13 +24,15 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
     return;
   };
 
-  const handleChange = (e: SyntheticEvent) => {
+  const handleChange = (e: any) => {
     e.preventDefault();
+    setDisabled(e);
+    setError(e.error.message)
   };
 
   return (
     <>
-      <Button onClick={handleOpen}>Pay</Button>
+      <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full" onClick={handleOpen}>Pay for order</button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -44,7 +45,7 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
               Pay for order
             </h2>
             <br />
-            <form>
+            <form onSubmit={handleSubmit}>
               <CardElement />
               <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
                 Pay
