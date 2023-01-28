@@ -13,6 +13,7 @@ const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI 
         return {
             ...state,
             count: state.count + 1,
+            quantity: state.quantity + 1,
             basket: [...state.basket, action.item],
         }
 
@@ -29,12 +30,15 @@ const stateReducer = (state: InitialStateI, action: BasicAction): InitialStateI 
           ...state,
           basket: newBasket,
           count: state.count - 1,
+          quantity: state.quantity -1
         }
 
       case REMOVE_ALL_ITEMS_FROM_BASKET:
         return {
           ...state,
-          basket: []
+          basket: [],
+          count: 0,
+          quantity: 0
         }
 
       default:
