@@ -6,7 +6,7 @@ const CardTable: React.FC = () => {
         <>
         <div className="flex mt-10 mb-5">
               <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
-                Product Details
+                Product info
               </h3>
               <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">
                 Quantity
@@ -34,7 +34,7 @@ const CardTable: React.FC = () => {
                     href="#"
                     className="font-semibold hover:text-red-500 text-gray-500 text-xs"
                   >
-                    Remove
+                    Remove from card
                   </a>
                 </div>
               </div>
@@ -60,10 +60,10 @@ const CardTable: React.FC = () => {
                 </svg>
               </div>
               <span className="text-center w-1/5 font-semibold text-sm">
-                $400.00
+                400.00€
               </span>
               <span className="text-center w-1/5 font-semibold text-sm">
-                $400.00
+                400.00€
               </span>
             </div>
         </>
