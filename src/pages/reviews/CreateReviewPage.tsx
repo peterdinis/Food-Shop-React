@@ -1,5 +1,7 @@
+import { ReviewForm } from '../../components/reviews';
+
 const CreateReviewPage: React.FC = () => {
-  return <>I am create review page</>;
+  return <ReviewForm />;
 };
 
 export default CreateReviewPage;

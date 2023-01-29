@@ -1,11 +1,9 @@
 import { useCardValue } from '../../context/CardContext';
-import { getBasketTotal } from '../../context/reducers/cardReducer';
+import { PaymentModal } from '../payments';
+import { motion } from 'framer-motion';
 
 const CardSummary: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;
-
-  const totalItems = getBasketTotal(state.basket) as any;
-  console.log(totalItems);
 
   return (
     <>
@@ -19,11 +17,9 @@ const CardSummary: React.FC = () => {
         <div className="border-t mt-8">
           <div className="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Total cost</span>
-            <span>{totalItems}€</span>
+            <span>1111€</span>
           </div>
-          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
-            Checkout
-          </button>
+          <PaymentModal />
         </div>
       </div>
     </>

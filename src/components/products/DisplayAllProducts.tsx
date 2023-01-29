@@ -9,6 +9,7 @@ import { ADD_TO_BASKET } from '../../typings/constants';
 import useImageOnLoad from '../../hooks/useImageLoad';
 import { style } from './style';
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 const DisplayAllProducts: React.FC = () => {
   const [products, setProduts] = useState([]);
@@ -46,23 +47,44 @@ const DisplayAllProducts: React.FC = () => {
                       />
                       <div className="pt-3 flex items-center justify-between">
                         <p className="font-bold">{item.name}</p>
-                        <button
-                          className="bg-blue-100 rounded-lg font-bold p-1"
-                          onClick={() => {
-                            notify();
-                            dispatch({
-                              type: ADD_TO_BASKET,
-                              item: {
-                                id: item.id,
-                                name: item.name,
-                                image: item.image,
-                                price: item.price,
-                              },
-                            });
-                          }}
+                        <motion.button
+                        onClick={() => {
+                          notify();
+                          dispatch({
+                            type: ADD_TO_BASKET,
+                            item: {
+                              id: item.id,
+                              name: item.name,
+                              image: item.image,
+                              price: item.price,
+                            },
+                          });
+                        }}
+              
+                        />
+                        <motion.button
+                          whileHover={{ scale: 1.2 }}
+                          onHoverStart={e => {}}
+                          onHoverEnd={e => {}}
                         >
-                          Add to Card
-                        </button>
+                          <button
+                            className="bg-blue-100 rounded-lg font-bold p-1"
+                            onClick={() => {
+                              notify();
+                              dispatch({
+                                type: ADD_TO_BASKET,
+                                item: {
+                                  id: item.id,
+                                  name: item.name,
+                                  image: item.image,
+                                  price: item.price,
+                                },
+                              });
+                            }}
+                          >
+                            Add to Card
+                          </button>
+                        </motion.button>
                       </div>
                       <p className="pt-1 text-gray-900 font-bold">
                         {item.price}€
