@@ -1,10 +1,11 @@
 import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { useState, ReactNode, FormEvent} from 'react';
+import { useState, ReactNode, FormEvent } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import {style} from "./style";
+import { style } from './style';
 import PaymentInfo from './PaymentInfo';
+import { motion } from 'framer-motion';
 
 interface IPaymentModalProps {
   children?: ReactNode;
@@ -17,7 +18,7 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -28,12 +29,17 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const handleChange = (e: any) => {
     e.preventDefault();
     setDisabled(e);
-    setError(e.error.message)
+    setError(e.error.message);
   };
 
   return (
     <>
-      <button className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full" onClick={handleOpen}>Pay for order</button>
+      <button
+        className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full"
+        onClick={handleOpen}
+      >
+        Pay for order
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -50,9 +56,14 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
             <br />
             <form className="mt-6" onSubmit={handleSubmit}>
               <CardElement />
-              <button className="mt-10 bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full">
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}
+                className="mt-10 bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full"
+              >
                 Pay
-              </button>
+              </motion.button>
             </form>
           </Elements>
         </Box>

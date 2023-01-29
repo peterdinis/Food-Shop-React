@@ -1,6 +1,6 @@
 import { useCardValue } from '../../context/CardContext';
-import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { PaymentModal } from '../payments';
+import { motion } from 'framer-motion';
 
 const CardSummary: React.FC = () => {
   const [state, dispatch] = useCardValue() as any;
