@@ -1,10 +1,9 @@
-import { CardElement, Elements } from '@stripe/react-stripe-js';
+import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, ReactNode, FormEvent } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { style } from './style';
-import PaymentInfo from './PaymentInfo';
 import { motion } from 'framer-motion';
 
 interface IPaymentModalProps {
@@ -18,15 +17,24 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
+  const [processing, setProcessing] = useState(true);
+
+  const stripe = useStripe();
+  const elements = useElements();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = (e: FormEvent) => {
-    return;
+  const handleSubmit = async (e: FormEvent) => {
+     e.preventDefault();
+     setProcessing(true);
+
+
+    // const payload = await stripe?.confirmCardPayment();
+
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = async (e: any) => {
     e.preventDefault();
     setDisabled(e);
     setError(e.error.message);
@@ -52,8 +60,6 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
               Pay for order
             </h2>
             <br />
-            <PaymentInfo />
-            <br />
             <form className="mt-6" onSubmit={handleSubmit}>
               <CardElement />
               <motion.button
@@ -66,6 +72,8 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
               </motion.button>
             </form>
           </Elements>
+
+          {error} && <div>{error}</div>
         </Box>
       </Modal>
     </>
