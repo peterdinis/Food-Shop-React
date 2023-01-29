@@ -20,17 +20,17 @@ const CardTable: React.FC = () => {
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">{item.name}</span>
-                      <button
+                      <a
                         onClick={() => {
                           dispatch({
                             type: REMOVE_FROM_BASKET,
                             item,
                           });
                         }}
-                        className="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                        className="cursor-pointer font-semibold hover:text-red-500 text-gray-500 text-xs"
                       >
                         Remove from card
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div className="flex justify-center w-1/5">
