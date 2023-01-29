@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { describe, it } from 'vitest';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getErrorMessage } from '../mocks/testErrorMessage';
 import { auth } from '../../firebase/init';
 
@@ -7,7 +7,7 @@ describe('Firebase authentication tests', () => {
   describe('Firebase register tests', () => {
     it('Try to register user to application', async () => {
       try {
-        await signInWithEmailAndPassword(auth, 'test@gmail.com', '1234');
+        await createUserWithEmailAndPassword(auth, 'test@gmail.com', '1234');
       } catch (err) {
         getErrorMessage(err);
       }
@@ -15,36 +15,52 @@ describe('Firebase authentication tests', () => {
 
     it('Could not register user to app because credentials are wrong', async () => {
       try {
-        await signInWithEmailAndPassword(auth, 2222, 2222);
+        await createUserWithEmailAndPassword(auth, 2222, 2222);
       } catch (err) {
         getErrorMessage(err);
       }
     });
   });
 
-  describe('Firebase login tests', () => {
+  describe.skip('Firebase login tests', () => {
     it('Try to login', async () => {
-      return;
+      try {
+
+      } catch(err) {
+        getErrorMessage(err);
+      }
     });
 
     it("Try to login but credentials are wrong", async () => {
-        return;
+        try {
+
+        } catch(err) {
+            getErrorMessage(err);
+        }
     })
   });
 
 
-  describe("Get user after login tests", () => {
+  describe.skip("Get user after login tests", () => {
     it("Try to get user data after successfully login to app", async() => {
-        return;
+        try {
+
+        } catch(err) {
+            getErrorMessage(err);
+        }
     })
 
     it("Try to get user data but requested user does not exists", async() => {
-        return;
+        try {
+
+        } catch(err) {
+            getErrorMessage(err);
+        }
     })
   })
 
 
-  describe("Firebase auth logout tests", async() => {
+  describe.skip("Firebase auth logout tests", async() => {
     return;
   })
 });
