@@ -1,20 +1,24 @@
 import * as functions from 'firebase-functions';
 import * as express from 'express';
 import * as cors from 'cors';
-import * as stripe from 'stripe';
-import * as dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: true
-}));
+// some middlewares
+app.use(
+  cors({
+    origin: true,
+  })
+);
 app.use(express.json());
 
 // testing route
-
+app.get('/example', (request, response) => {
+  response.send('Hi i am backend');
+});
 
 // example firebase function
 export const helloWorld = functions.https.onRequest((request, response) => {
