@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signOut,
   confirmPasswordReset,
+  User,
 } from 'firebase/auth';
 
 const AuthContext = createContext({
@@ -28,7 +29,7 @@ interface IContextProps {
 export const useAuth = () => useContext(AuthContext);
 
 export default function AuthContextProvider({ children }: IContextProps) {
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
