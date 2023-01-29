@@ -1,4 +1,9 @@
-import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
+import {
+  CardElement,
+  Elements,
+  useElements,
+  useStripe,
+} from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, ReactNode, FormEvent } from 'react';
 import Box from '@mui/material/Box';
@@ -20,18 +25,15 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const [processing, setProcessing] = useState(true);
 
   /* const stripe = useStripe(); */
-  const elements = useElements();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async (e: FormEvent) => {
-     e.preventDefault();
-     setProcessing(true);
-
+    e.preventDefault();
+    setProcessing(true);
 
     // const payload = await stripe?.confirmCardPayment();
-
   };
 
   const handleChange = async (e: any) => {
@@ -42,20 +44,20 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
 
   return (
     <>
-      <button
-        className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full"
-        onClick={handleOpen}
-      >
-        Pay for order
-      </button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Elements stripe={promise}>
+      <Elements stripe={promise}>
+        <button
+          className="bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full"
+          onClick={handleOpen}
+        >
+          Pay for order
+        </button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
             <h2 className="text-center mt-4 text-lg font-bold">
               Pay for order
             </h2>
@@ -71,11 +73,10 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
                 Pay
               </motion.button>
             </form>
-          </Elements>
-
-          {error} && <div>{error}</div>
-        </Box>
-      </Modal>
+            {error} && <div>{error}</div>
+          </Box>
+        </Modal>
+      </Elements>
     </>
   );
 };
