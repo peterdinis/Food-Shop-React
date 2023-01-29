@@ -10,6 +10,7 @@ import {
   ForgotPasswordPage,
   ResetPasswordPage,
 } from './pages/auth';
+import { OrderPage } from './pages/orders';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/card" element={<CardPage />} />
+        <Route path="/orders" element={<OrderPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
