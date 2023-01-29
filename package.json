@@ -21,6 +21,7 @@
     "axios": "^1.2.3",
     "firebase": "^9.16.0",
     "firebase-admin": "^11.5.0",
+    "framer-motion": "^8.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
