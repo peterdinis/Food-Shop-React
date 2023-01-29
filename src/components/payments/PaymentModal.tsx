@@ -23,6 +23,7 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState(true);
+  const [clientSecret, setClientSecret] = useState(null);
 
   /* const stripe = useStripe(); */
 
