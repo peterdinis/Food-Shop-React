@@ -48,6 +48,21 @@ const DisplayAllProducts: React.FC = () => {
                       <div className="pt-3 flex items-center justify-between">
                         <p className="font-bold">{item.name}</p>
                         <motion.button
+                        onClick={() => {
+                          notify();
+                          dispatch({
+                            type: ADD_TO_BASKET,
+                            item: {
+                              id: item.id,
+                              name: item.name,
+                              image: item.image,
+                              price: item.price,
+                            },
+                          });
+                        }}
+              
+                        />
+                        <motion.button
                           whileHover={{ scale: 1.2 }}
                           onHoverStart={e => {}}
                           onHoverEnd={e => {}}
