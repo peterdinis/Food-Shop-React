@@ -5,11 +5,13 @@ import {
   useStripe,
 } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { useState, ReactNode, FormEvent } from 'react';
+import { useState, ReactNode, FormEvent, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { style } from './style';
 import { motion } from 'framer-motion';
+import { useCardValue } from '../../context/CardContext';
+import axios from 'axios';
 
 interface IPaymentModalProps {
   children?: ReactNode;
@@ -18,6 +20,7 @@ interface IPaymentModalProps {
 const PaymentModal: React.FC<IPaymentModalProps> = ({
   children,
 }: IPaymentModalProps) => {
+  const [state, dispatch] = useCardValue() as any;
   const promise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY as string);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(null);
@@ -29,6 +32,17 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+      const getClientSecret = async() => {
+        const response =await axios({
+          method: "POST",
+          url: ""
+        })
+      }
+
+      getClientSecret();
+  }, [state.basket]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
