@@ -19,7 +19,7 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState(true);
 
-  const stripe = useStripe();
+  /* const stripe = useStripe(); */
   const elements = useElements();
 
   const handleOpen = () => setOpen(true);
