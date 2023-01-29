@@ -9,7 +9,6 @@ import { useState, ReactNode, FormEvent, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { style } from './style';
-import { motion } from 'framer-motion';
 import { useCardValue } from '../../context/CardContext';
 import axios from 'axios';
 
@@ -79,16 +78,12 @@ const PaymentModal: React.FC<IPaymentModalProps> = ({
             <br />
             <form className="mt-6" onSubmit={handleSubmit}>
               <CardElement />
-              <motion.button
-                whileHover={{ scale: 1.2 }}
-                onHoverStart={e => {}}
-                onHoverEnd={e => {}}
+              <button
                 className="mt-10 bg-blue-300 font-semibold rounded-lg py-3 text-sm text-black uppercase w-full"
               >
                 Pay
-              </motion.button>
+              </button>
             </form>
-            {error} && <div>{error}</div>
           </Box>
         </Modal>
       </Elements>

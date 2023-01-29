@@ -20,6 +20,8 @@ app.get('/example', (request, response) => {
   response.send('Hi i am backend');
 });
 
+exports.app = functions.https.onRequest(app);
+
 // example firebase function
 export const helloWorld = functions.https.onRequest((request, response) => {
   functions.logger.info('Hello logs!', { structuredData: true });
