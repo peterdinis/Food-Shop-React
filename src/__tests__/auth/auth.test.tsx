@@ -22,7 +22,9 @@ describe('Firebase authentication tests', () => {
     });
   });
 
-  describe.skip('Firebase login tests', () => {
+
+  /* TODO: Later create some mocks for this functions */
+  /* describe.skip('Firebase login tests', () => {
     it('Try to login', async () => {
       try {
 
@@ -60,7 +62,13 @@ describe('Firebase authentication tests', () => {
   })
 
 
-  describe.skip("Firebase auth logout tests", async() => {
-    return;
-  })
+  describe.skip("Firebase auth logout tests", () => {
+     it("Try to logout from application", async() => {
+        try {
+
+        } catch(err) {
+            getErrorMessage(err);
+        }
+     })
+  }) */
 });
