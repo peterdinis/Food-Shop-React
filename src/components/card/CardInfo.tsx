@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 const CardInfo: React.FC = () => {
   return (
     <>
-      <div className="container mx-auto mt-10">
+    fkfkfkfk
+     {/*  <div className="container mx-auto mt-10">
         <div className="flex shadow-md my-10">
           <div className="w-3/4 bg-white px-10 py-10">
             <CardHeader />
@@ -24,7 +25,7 @@ const CardInfo: React.FC = () => {
           <CardSummary />
         </div>
       </div>
-      <ScrollToTop />
+      <ScrollToTop /> */}
     </>
   );
 };
