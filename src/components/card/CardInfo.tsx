@@ -1,3 +1,5 @@
+import { PaymentModal } from "../payments";
+
 const CardInfo: React.FC = () => {
   return (
     <>
@@ -129,6 +131,9 @@ const CardInfo: React.FC = () => {
               </tbody>
             </table>
             <hr className="pb-6 mt-6" />
+            <div className="mt-6 text-center">
+              <PaymentModal />
+            </div>
           </div>
         </div>
       </div>
