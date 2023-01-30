@@ -1,6 +1,8 @@
 import { PaymentModal } from "../payments";
+import { useCardValue } from "../../context/CardContext";
 
 const CardInfo: React.FC = () => {
+  const [{basket}, dispatch] = useCardValue() as any;
   return (
     <>
       <div className="flex justify-center my-6">
@@ -9,7 +11,7 @@ const CardInfo: React.FC = () => {
             <table className="w-full text-sm lg:text-base">
               <thead>
                 <tr className="h-12 uppercase">
-                  <th className="hidden md:table-cell"></th>
+                  <th className="text-left pt-3">Image</th>
                   <th className="text-left">Products</th>
                   <th className="lg:text-right text-left pl-5 lg:pl-0">
                     <span className="lg:hidden" title="Quantity">
