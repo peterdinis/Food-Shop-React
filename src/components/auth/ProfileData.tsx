@@ -1,5 +1,6 @@
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import ProfileOrders from './ProfileOrders';
 
 const ProfileData: React.FC = () => {
   const { currentUser, logout } = useAuth();
@@ -36,33 +37,8 @@ const ProfileData: React.FC = () => {
             </button>
           </p>
           <h4 className="mt-6 ml-4">My Last Orders</h4>
-          <div className="flex justify-between items-center my-5 px-6">
-            <a
-              href=""
-              className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-            >
-              Facebook
-            </a>
-            <a
-              href=""
-              className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-            >
-              Twitter
-            </a>
-            <a
-              href=""
-              className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-            >
-              Instagram
-            </a>
-            <a
-              href=""
-              className="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-            >
-              Email
-            </a>
-          </div>
-        </div>
+          <ProfileOrders />
+         </div>
       </div>
     </div>
   );
