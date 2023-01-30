@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Banner: React.FC = () => {
   return (
-    <section className="relative bg-[url(https://ca-times.brightspotcdn.com/dims4/default/4f9761e/2147483647/strip/true/crop/3500x1969+0+0/resize/1200x675!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa3%2Fbc%2F967153f7443ab69d6b182b91b1f4%2Ffo-quickbites-07102022-02.jpg)] bg-cover bg-center bg-no-repeat">
+    <section className="relative bg-[url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-shopping-mall-supermarket-selection-merchandise-poster-background-material-image_133225.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
