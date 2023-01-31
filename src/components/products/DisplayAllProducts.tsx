@@ -1,7 +1,7 @@
 import { FallBackLoader, Header } from '../shared';
 import useImageOnLoad from '../../hooks/useImageLoad';
 import { style } from './style';
-import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import * as api from '../../api/queries/productQueries';
 import ScrollToTop from '../../hooks/useScroll';
@@ -43,7 +43,9 @@ const DisplayAllProducts: React.FC = () => {
                       <div className="pt-3 flex items-center justify-between">
                         <p className="font-bold">{item.name}</p>
                         <button className="bg-blue-100 rounded-lg font-bold p-1">
-                          Detail
+                          <Link to={`/product/${item.id}`}>
+                            Detail
+                          </Link>
                         </button>
                       </div>
                       <p className="pt-1 text-gray-900 font-bold">

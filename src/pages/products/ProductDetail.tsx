@@ -1,8 +1,8 @@
+import { ProductInfo } from "../../components/products";
+
 const ProductDetail: React.FC = () => {
     return (
-        <>
-        ggggggg
-        </>
+        <ProductInfo />
     )
 }
 
