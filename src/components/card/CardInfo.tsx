@@ -1,4 +1,4 @@
-import { PaymentModal } from '../payments';
+/* import { PaymentModal } from '../payments';
 import { useCardValue } from '../../context/CardContext';
 import ScrollToTop from '../../hooks/useScroll';
 
@@ -86,3 +86,14 @@ const CardInfo: React.FC = () => {
 };
 
 export default CardInfo;
+ */
+
+import React from 'react'
+
+function CardInfo() {
+  return (
+    <div>CardInfo</div>
+  )
+}
+
+export default CardInfo

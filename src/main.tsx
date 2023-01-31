@@ -3,24 +3,22 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import AuthContextProvider from './context/AuthContext';
 import { FallBackLoader } from './components/shared';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { CardProvider } from './context/CardContext';
-import stateReducer from './context/reducers/cardReducer';
-import { initialState } from './typings/reduxTypings';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './api/queryClient';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <React.Suspense fallback={<FallBackLoader />}>
       <BrowserRouter>
-        <AuthContextProvider>
-          <CardProvider reducer={stateReducer} initialState={initialState}>
-            <App />
-          </CardProvider>
+        <QueryClientProvider client={queryClient}>
+          <App />
+          <ReactQueryDevtools />
           <ToastContainer />
-        </AuthContextProvider>
+        </QueryClientProvider>
       </BrowserRouter>
     </React.Suspense>
   </React.StrictMode>

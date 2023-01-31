@@ -1,6 +1,23 @@
 import { Link } from 'react-router-dom';
+import {useQuery} from "@tanstack/react-query";
+import * as api from "../../api/queries/exampleQueries"
+import { queryClient } from '../../api/queryClient';
+import { FallBackLoader } from '../shared';
+import FallbackRender from '../shared/FallbackRender';
 
 const Banner: React.FC = () => {
+  const {data, isLoading, isError} = useQuery(["example"], api.getExampleQuery);
+
+  if(isLoading) {
+    return <FallBackLoader />
+  }
+
+  if(isError) {
+    return <FallbackRender error="Something went wrong" />
+  }
+
+  queryClient.setQueriesData(["exampleKey"], data);
+
   return (
     <section className="relative bg-[url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-shopping-mall-supermarket-selection-merchandise-poster-background-material-image_133225.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>

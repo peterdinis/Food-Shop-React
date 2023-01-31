@@ -1,4 +1,4 @@
-import ScrollToTop from '../../hooks/useScroll';
+/* import ScrollToTop from '../../hooks/useScroll';
 import { FallBackLoader, Header } from '../shared';
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase/init';
@@ -102,3 +102,15 @@ const DisplayAllProducts: React.FC = () => {
 };
 
 export default DisplayAllProducts;
+ */
+
+
+import React from 'react'
+
+function DisplayAllProducts() {
+  return (
+    <div>DisplayAllProducts</div>
+  )
+}
+
+export default DisplayAllProducts

@@ -1,12 +1,8 @@
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import { useAuth } from '../../context/AuthContext';
-import { useCardValue } from '../../context/CardContext';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-  const { currentUser } = useAuth();
-  const [state] = useCardValue() as any;
   return (
     <>
       <nav id="header" className="w-full z-30 top-0 py-1">
@@ -41,7 +37,6 @@ const Navbar: React.FC = () => {
                     Products
                   </Link>
                 </li>
-                {currentUser === null ? (
                   <>
                     <li>
                       <Link
@@ -60,18 +55,6 @@ const Navbar: React.FC = () => {
                       </Link>
                     </li>
                   </>
-                ) : (
-                  <>
-                    <li>
-                      <Link
-                        className="font-bold inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                        to="/profile"
-                      >
-                        Profile
-                      </Link>
-                    </li>
-                  </>
-                )}
               </ul>
             </nav>
           </div>
@@ -94,7 +77,7 @@ const Navbar: React.FC = () => {
               className="pl-3 inline-block no-underline hover:text-black"
               to="/card"
             >
-              <ShoppingBasketIcon /> {state.count}
+              <ShoppingBasketIcon /> 111
             </Link>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+/* import { useForm } from 'react-hook-form';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -26,8 +26,6 @@ const LoginForm: React.FC = () => {
       console.error(err);
     }
   };
-
-  /* TODO: Later update this fn!! */
   const handleRedirectToOrBack = () => {
     window.location.replace('/profile');
   };
@@ -134,4 +132,14 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm;
+export default LoginForm; */
+
+import React from 'react'
+
+function LoginForm() {
+  return (
+    <div>LoginForm</div>
+  )
+}
+
+export default LoginForm
