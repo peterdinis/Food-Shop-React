@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+/* import { useForm } from 'react-hook-form';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -126,3 +126,14 @@ const RegisterForm: React.FC = () => {
 };
 
 export default RegisterForm;
+ */
+
+import React from 'react'
+
+function RegisterForm() {
+  return (
+    <div>RegisterForm</div>
+  )
+}
+
+export default RegisterForm
