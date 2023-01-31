@@ -1,9 +1,9 @@
-import { useAuth } from '../context/AuthContext';
-import { Navigate, Outlet } from 'react-router-dom';
+import React from 'react'
 
-const ProtectedRoute: React.FC = () => {
-  const { currentUser } = useAuth();
-  return currentUser !== null ? <Outlet /> : <Navigate to="/notallowed" />;
-};
+function ProtectedRoute() {
+  return (
+    <div>ProtectedRoute</div>
+  )
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute
