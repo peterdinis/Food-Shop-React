@@ -1,40 +1,35 @@
-/* import ScrollToTop from '../../hooks/useScroll';
 import { FallBackLoader, Header } from '../shared';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../../firebase/init';
-import { useEffect, useState, Suspense } from 'react';
-import { IProduct } from '../../typings/productTypings';
-import { useCardValue } from '../../context/CardContext';
-import { ADD_TO_BASKET } from '../../typings/constants';
 import useImageOnLoad from '../../hooks/useImageLoad';
 import { style } from './style';
-import { toast } from 'react-toastify';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import * as api from '../../api/queries/productQueries';
+import ScrollToTop from '../../hooks/useScroll';
+import FallbackRender from '../shared/FallbackRender';
+import { IProduct } from '../../api/interfaces/IProduct';
 
 const DisplayAllProducts: React.FC = () => {
-  const [products, setProduts] = useState([]);
-  const productsCollectionRef = collection(firestore, 'products');
-  const [state, dispatch] = useCardValue() as any;
+  const { data, isLoading, isError } = useQuery(
+    ['products'],
+    api.getAllProducts
+  );
   const { handleImageOnLoad } = useImageOnLoad();
 
-  const notify = () => toast.success('New item was add to card!');
+  if (isLoading) {
+    return <FallBackLoader />;
+  }
 
-  useEffect(() => {
-    const getProducts = async () => {
-      const data = await getDocs(productsCollectionRef);
-      setProduts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })) as any);
-    };
-
-    getProducts();
-  }, []);
+  if (isError) {
+    return <FallbackRender error="Something went wrong" />;
+  }
 
   return (
-    <Suspense fallback={<FallBackLoader />}>
-      <Header text="All Foods" />
+    <>
       <section className="bg-white py-8">
+        <Header text="All Foods" />
         <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-          {products &&
-            products.map((item: IProduct) => {
+          {data &&
+            data.map((item: IProduct) => {
               return (
                 <>
                   <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
@@ -47,47 +42,14 @@ const DisplayAllProducts: React.FC = () => {
                       />
                       <div className="pt-3 flex items-center justify-between">
                         <p className="font-bold">{item.name}</p>
-                        <motion.button
-                        onClick={() => {
-                          notify();
-                          dispatch({
-                            type: ADD_TO_BASKET,
-                            item: {
-                              id: item.id,
-                              name: item.name,
-                              image: item.image,
-                              price: item.price,
-                            },
-                          });
-                        }}
-              
-                        />
-                        <motion.button
-                          whileHover={{ scale: 1.2 }}
-                          onHoverStart={e => {}}
-                          onHoverEnd={e => {}}
-                        >
-                          <button
-                            className="bg-blue-100 rounded-lg font-bold p-1"
-                            onClick={() => {
-                              notify();
-                              dispatch({
-                                type: ADD_TO_BASKET,
-                                item: {
-                                  id: item.id,
-                                  name: item.name,
-                                  image: item.image,
-                                  price: item.price,
-                                },
-                              });
-                            }}
-                          >
-                            Add to Card
-                          </button>
-                        </motion.button>
+                        <button className="bg-blue-100 rounded-lg font-bold p-1">
+                          <Link to={`/product/${item.id}`}>
+                            Detail
+                          </Link>
+                        </button>
                       </div>
                       <p className="pt-1 text-gray-900 font-bold">
-                        {item.price}€
+                        {item.price}
                       </p>
                     </span>
                   </div>
@@ -97,20 +59,8 @@ const DisplayAllProducts: React.FC = () => {
         </div>
       </section>
       <ScrollToTop />
-    </Suspense>
+    </>
   );
 };
 
 export default DisplayAllProducts;
- */
-
-
-import React from 'react'
-
-function DisplayAllProducts() {
-  return (
-    <div>DisplayAllProducts</div>
-  )
-}
-
-export default DisplayAllProducts
