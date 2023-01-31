@@ -54,7 +54,8 @@ const ProductInfo: React.FC = () => {
                   <span className="font-bold">Product name</span>: {data.name}
                 </h1>
                 <h3 className="text-gray-900 mt-8 text-3xl title-font font-medium mb-1">
-                  <span className="font-bold">Product description</span>: {data.description}
+                  <span className="font-bold">Product description</span>:{' '}
+                  {data.description}
                 </h3>
 
                 <h3 className="text-gray-900 mt-8 text-3xl title-font font-medium mb-1">
@@ -62,11 +63,9 @@ const ProductInfo: React.FC = () => {
                 </h3>
 
                 <button className="mt-10 bg-blue-100 rounded-lg text-xl font-bold p-1">
-                    <Link to="/card">
-                        Add to card
-                    </Link>
+                  <Link to="/card">Add to card</Link>
                 </button>
-              </div>      
+              </div>
             </div>
           </div>
         </section>
