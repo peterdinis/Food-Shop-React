@@ -21,11 +21,6 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/card" element={<CardPage />} />
         <Route path="/orders" element={<OrderPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/forgot/password" element={<ForgotPasswordPage />} />
-        <Route path="/reset/password" element={<ResetPasswordPage />} />
         <Route path="/notallowed" element={<NotAllowedPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
