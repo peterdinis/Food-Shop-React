@@ -11,6 +11,7 @@ import {
   ResetPasswordPage,
 } from './pages/auth';
 import { OrderPage } from './pages/orders';
+import ProductDetail from './pages/products/ProductDetail';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/card" element={<CardPage />} />
         <Route path="/orders" element={<OrderPage />} />
         <Route path="/notallowed" element={<NotAllowedPage />} />

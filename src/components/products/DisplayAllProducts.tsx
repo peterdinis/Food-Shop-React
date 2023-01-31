@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import * as api from '../../api/queries/productQueries';
 import ScrollToTop from '../../hooks/useScroll';
 import FallbackRender from '../shared/FallbackRender';
+import { IProduct } from '../../api/interfaces/IProduct';
 
 const DisplayAllProducts: React.FC = () => {
   const { data, isLoading, isError } = useQuery(
@@ -28,7 +29,7 @@ const DisplayAllProducts: React.FC = () => {
         <Header text="All Foods" />
         <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
           {data &&
-            data.map((item: any) => {
+            data.map((item: IProduct) => {
               return (
                 <>
                   <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
