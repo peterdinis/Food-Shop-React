@@ -51,19 +51,24 @@ const ProductInfo: React.FC = () => {
               )}
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                  <span className="font-bold">Product name</span>: {data.name}
+                  <span className="font-bold">name</span>: {data.name}
                 </h1>
                 <h3 className="text-gray-900 mt-8 text-3xl title-font font-medium mb-1">
-                  <span className="font-bold">Product description</span>:{' '}
+                  <span className="font-bold">description</span>:{' '}
                   {data.description}
                 </h3>
 
                 <h3 className="text-gray-900 mt-8 text-3xl title-font font-medium mb-1">
-                  <span className="font-bold">Product price</span>: {data.price}
+                  <span className="font-bold">price</span>: {data.price}
                 </h3>
 
                 <button className="mt-10 bg-blue-100 rounded-lg text-xl font-bold p-1">
                   <Link to="/card">Add to card</Link>
+                </button>
+                <hr className="mt-4" />
+
+                <button onClick={navigateBackToProducts} className="mt-10 bg-blue-100 rounded-lg text-xl font-bold p-1">
+                  <Link to="/products">Go to products page</Link>
                 </button>
               </div>
             </div>
