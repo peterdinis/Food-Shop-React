@@ -5,21 +5,20 @@ import * as api from "../../api/mutations/authMutations";
 import {toast} from "react-toastify";
 import { IRegisterUser } from '../../api/interfaces/IUser';
 
-type FormData = {
-  email: string;
-  password: string;
-};
-
 const RegisterForm: React.FC = () => {
   const navigate = useNavigate();
 
+  const notify = () => toast.success("Registrácia bola úspešná");
+  const errorRegister = () => toast.error("Registrácia nebola úspešná");
+
+  // TODO: Update later onSuccess, onError
   const mutation = useMutation(api.registerUser, {
     onSuccess: () => {
-      return
+      notify();
     },
 
     onError: () => {
-      return
+      errorRegister();
     }
   });
 
@@ -45,6 +44,32 @@ const RegisterForm: React.FC = () => {
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
         <form onSubmit={handleSubmit(onHandleSubmit)}>
           <div className="mb-4">
+          <div className="mb-2">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="password"
+              >
+                Name
+              </label>
+              <input
+                className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+                id="text"
+                type="text"
+                required={true}
+                placeholder="Some name"
+                {...register('name', {
+                  required: 'Name is Required!!!',
+                })}
+                onKeyUp={() => {
+                  trigger('name');
+                }}
+              />
+
+              <p className="text-red-800">
+                {errors.email && errors.email.message}
+              </p>
+            </div>
+
             <div className="mb-2">
               <label
                 className="block text-grey-darker text-sm font-bold mb-2"

@@ -1,17 +1,11 @@
-/* import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import ProfileOrders from './ProfileOrders';
 
 const ProfileData: React.FC = () => {
-  const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();
     navigate('/');
   };
-
-  console.log(currentUser);
 
   return (
     <div className="container mx-auto my-60">
@@ -26,7 +20,7 @@ const ProfileData: React.FC = () => {
 
         <div className="mt-10">
           <h1 className="font-bold text-center text-3xl text-gray-900">
-            {currentUser?.email}
+            ggg@gmail.com
           </h1>
           <p className="text-center text-sm text-gray-400 font-medium">
             <button
@@ -37,7 +31,6 @@ const ProfileData: React.FC = () => {
             </button>
           </p>
           <h4 className="mt-6 ml-4">My Last Orders</h4>
-          <ProfileOrders />
          </div>
       </div>
     </div>
@@ -45,14 +38,3 @@ const ProfileData: React.FC = () => {
 };
 
 export default ProfileData;
- */
-
-import React from 'react'
-
-function ProfileData() {
-  return (
-    <div>ProfileData</div>
-  )
-}
-
-export default ProfileData
