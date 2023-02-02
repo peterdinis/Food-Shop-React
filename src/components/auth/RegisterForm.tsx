@@ -1,6 +1,9 @@
-/* import { useForm } from 'react-hook-form';
-import { useAuth } from '../../context/AuthContext';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import {useMutation} from "@tanstack/react-query";
+import * as api from "../../api/mutations/authMutations";
+import {toast} from "react-toastify";
+import { IRegisterUser } from '../../api/interfaces/IUser';
 
 type FormData = {
   email: string;
@@ -9,18 +12,27 @@ type FormData = {
 
 const RegisterForm: React.FC = () => {
   const navigate = useNavigate();
-  const { registerUser } = useAuth();
+
+  const mutation = useMutation(api.registerUser, {
+    onSuccess: () => {
+      return
+    },
+
+    onError: () => {
+      return
+    }
+  });
 
   const {
     handleSubmit,
     formState: { errors },
     trigger,
     register,
-  } = useForm<FormData>();
+  } = useForm<IRegisterUser>();
 
-  const onHandleSubmit = (data: FormData) => {
+  const onHandleSubmit = (data: IRegisterUser) => {
     try {
-      registerUser(data.email, data.password);
+      mutation.mutate(data);
       navigate('/login');
     } catch (err) {
       console.error(err);
@@ -126,14 +138,3 @@ const RegisterForm: React.FC = () => {
 };
 
 export default RegisterForm;
- */
-
-import React from 'react'
-
-function RegisterForm() {
-  return (
-    <div>RegisterForm</div>
-  )
-}
-
-export default RegisterForm
