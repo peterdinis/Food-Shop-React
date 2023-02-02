@@ -6,9 +6,7 @@ import { CardPage } from './pages/card';
 import {
   RegisterPage,
   LoginPage,
-  ProfilePage,
-  ForgotPasswordPage,
-  ResetPasswordPage,
+  ProfilePage
 } from './pages/auth';
 import { OrderPage } from './pages/orders';
 import ProductDetail from './pages/products/ProductDetail';
@@ -24,6 +22,9 @@ function App() {
         <Route path="/card" element={<CardPage />} />
         <Route path="/orders" element={<OrderPage />} />
         <Route path="/notallowed" element={<NotAllowedPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
