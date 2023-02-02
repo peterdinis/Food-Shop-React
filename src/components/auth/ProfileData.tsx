@@ -1,4 +1,4 @@
-import { useAuth } from '../../context/AuthContext';
+/* import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import ProfileOrders from './ProfileOrders';
 
@@ -45,3 +45,14 @@ const ProfileData: React.FC = () => {
 };
 
 export default ProfileData;
+ */
+
+import React from 'react'
+
+function ProfileData() {
+  return (
+    <div>ProfileData</div>
+  )
+}
+
+export default ProfileData
