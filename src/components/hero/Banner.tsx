@@ -32,7 +32,7 @@ const Banner: React.FC = () => {
           </h1>
 
           <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dignissimos culpa sequi. Amet ad vel sed asperiores tempora exercitationem eos.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, reprehenderit quaerat eius, exercitationem ducimus, ab saepe quibusdam porro vitae delectus repudiandae velit ratione nesciunt maiores.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">
@@ -42,7 +42,15 @@ const Banner: React.FC = () => {
             >
               Products
             </Link>
+
+            <Link 
+              to="/products"
+              className="block w-full rounded bg-white px-12 py-3 text-xl font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+            >
+              About Us
+            </Link>
           </div>
+          
         </div>
       </div>
     </section>
