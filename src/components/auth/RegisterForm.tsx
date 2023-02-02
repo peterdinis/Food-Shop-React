@@ -8,8 +8,8 @@ import { IRegisterUser } from '../../api/interfaces/IUser';
 const RegisterForm: React.FC = () => {
   const navigate = useNavigate();
 
-  const notify = () => toast.success("Registrácia bola úspešná");
-  const errorRegister = () => toast.error("Registrácia nebola úspešná");
+  const notify = () => toast.success("Successfully register to app");
+  const errorRegister = () => toast.error("Registration failed");
 
   // TODO: Update later onSuccess, onError
   const mutation = useMutation(api.registerUser, {

@@ -1,37 +1,41 @@
-/* import { useForm } from 'react-hook-form';
-import { useAuth } from '../../context/AuthContext';
-import { useNavigate, useLocation } from 'react-router-dom';
-
-type FormData = {
-  email: string;
-  password: string;
-};
+import { useForm } from 'react-hook-form';
+import {useMutation} from "@tanstack/react-query";
+import * as api from "../../api/mutations/authMutations";
+import {toast} from "react-toastify";
+import { ILoginUser } from '../../api/interfaces/IUser';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
-  const { login, signInWithGoogle } = useAuth();
+
+  const notify = () => toast.success("Registrácia bola úspešná");
+  const errorRegister = () => toast.error("Login failed");
+
 
   const {
     handleSubmit,
     formState: { errors },
     trigger,
     register,
-  } = useForm<FormData>();
+  } = useForm<ILoginUser>();
 
-  const onHandleSubmit = (data: FormData) => {
+  const mutation = useMutation(api.loginUser, {
+    onSuccess: () => {
+      notify();
+    },
+
+    onError: () => {
+      errorRegister();
+    }
+  })
+
+  const onHandleSubmit = (data: ILoginUser) => {
     try {
-      login(data.email, data.password);
+      mutation.mutate(data);
       navigate('/profile');
     } catch (err) {
       console.error(err);
     }
-  };
-  const handleRedirectToOrBack = () => {
-    window.location.replace('/profile');
-  };
-
-  const googleLogin = () => {
-    signInWithGoogle();
   };
 
   return (
@@ -132,14 +136,4 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm; */
-
-import React from 'react'
-
-function LoginForm() {
-  return (
-    <div>LoginForm</div>
-  )
-}
-
-export default LoginForm
+export default LoginForm;
