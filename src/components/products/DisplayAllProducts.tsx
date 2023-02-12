@@ -7,6 +7,7 @@ import * as api from '../../api/queries/productQueries';
 import ScrollToTop from '../../hooks/useScroll';
 import FallbackRender from '../shared/FallbackRender';
 import { IProduct } from '../../api/interfaces/IProduct';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const DisplayAllProducts: React.FC = () => {
   const { data, isLoading, isError } = useQuery(
@@ -34,7 +35,7 @@ const DisplayAllProducts: React.FC = () => {
                 <>
                   <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
                     <span>
-                      <img
+                      <LazyLoadImage
                         style={{ ...style.image }}
                         className="hover:grow hover:shadow-lg"
                         src={item.image}
